@@ -1,0 +1,72 @@
+header {
+    width: 100%;
+    height: 25%;
+    background-image: url(images/america_banner2.jpg);
+    background-repeat: no-repeat;
+    background-color: #060030;
+    background-size: 100% auto;
+    overflow: hidden;
+    display: block;
+}
+
+.game-title {
+    color: white;
+    position: static;
+    font-family: 'Lobster', cursive;
+    margin-left: 2%;
+}
+
+.nav-bar {
+    font-family: 'Cardo', serif;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar li {
+    display: inline;
+    margin: 4%;
+}
+
+.nav-bar a:link {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-bar a:hover {
+    text-decoration: wavy;
+    color: red;
+    text-transform: uppercase;
+}
+
+/* STATS SECTION FORMATTING */
+
+#stats_container {
+    background-color: #0F0093;
+    color: white;
+    width: 13%;
+    height: 169vh;
+    float: left;
+    display: block;
+}
+
+/* game container formatting */
+#game-area {
+    overflow: hidden;
+    border: 1px solid red;
+    width: auto;
+    height: 168vh;
+    padding-right: 1%;
+
+}
+
+.card {
+    border: 1px solid black;
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 1%;
+
+}
