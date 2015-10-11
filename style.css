@@ -60,6 +60,7 @@ header {
     width: auto;
     height: 168vh;
     padding-right: 1%;
+    position: relative;
 
 }
 
@@ -80,8 +81,7 @@ header {
 }
 
 .back {
-    position: relative;
-    backface-visibility: hidden;
+    position: absolute;
     background-color: white;
 
 }
