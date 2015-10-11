@@ -48,7 +48,7 @@ header {
     background-color: #0F0093;
     color: white;
     width: 13%;
-    height: 169vh;
+    height: 83vh;
     float: left;
     display: block;
 }
@@ -58,7 +58,7 @@ header {
     overflow: hidden;
     border: 1px solid red;
     width: auto;
-    height: 168vh;
+    height: auto;
     padding-right: 1%;
     position: relative;
 
@@ -71,12 +71,16 @@ header {
     margin-top: 1%;
     background-color: white;
     overflow: hidden;
+    height: 150px;
+    width: 150px;
     position: relative;
+    box-shadow: 3px 3px 1px #888888;
 
 }
 
 .front {
     position: absolute;
+
 
 }
 
@@ -84,4 +88,39 @@ header {
     position: absolute;
     background-color: white;
 
+
+}
+
+/*ABOUT PAGE STYLING */
+
+
+.about-heading {
+    font-family: 'Lobster', cursive;
+}
+
+#about-container {
+    width: 90%;
+    border: 1px black solid;
+    margin: 0 5%;
+    box-shadow: 10px 10px 5px #888888;
+    border-radius: 20%;
+    overflow: hidden;
+    background-color: white;
+}
+
+#pic-me {
+    height: auto;
+    width: 80%;
+    display: inline;
+
+}
+
+.about-content {
+    font-family: 'Cardo', serif;
+    display: inline;
+    font-size: 1.3em;
+}
+
+#portfolio-link a {
+    color: pink;
 }
