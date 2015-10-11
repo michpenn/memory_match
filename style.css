@@ -68,5 +68,20 @@ header {
     display: inline-block;
     margin-left: 2%;
     margin-top: 1%;
+    background-color: white;
+    overflow: hidden;
 
 }
+/*
+.trump .front img {
+    float: left;
+
+}
+
+.trump .back img {
+    position: relative;
+    top: 0;
+    right: 0;
+
+}
+*/
