@@ -70,18 +70,18 @@ header {
     margin-top: 1%;
     background-color: white;
     overflow: hidden;
-
-}
-/*
-.trump .front img {
-    float: left;
-
-}
-
-.trump .back img {
     position: relative;
-    top: 0;
-    right: 0;
 
 }
-*/
+
+.front {
+    position: absolute;
+
+}
+
+.back {
+    position: relative;
+    backface-visibility: hidden;
+    background-color: white;
+
+}
