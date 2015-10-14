@@ -1,0 +1,141 @@
+/*game page formatting */
+header {
+    width: 100%;
+    height: 25%;
+    background-image: url(images/america_banner2.jpg);
+    background-repeat: no-repeat;
+    background-color: #060030;
+    background-size: 100% auto;
+    overflow: hidden;
+    display: block;
+}
+
+.game-title {
+    color: white;
+    position: static;
+    font-family: 'Lobster', cursive;
+    margin-left: 2%;
+}
+
+.nav-bar {
+    font-family: 'Cardo', serif;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar li {
+    display: inline;
+    margin: 4%;
+}
+
+.nav-bar a:link {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-bar a:visited {
+    color: lightblue;
+}
+
+.nav-bar a:hover {
+    text-decoration: none;
+    color: red;
+    text-transform: uppercase;
+}
+
+/* STATS SECTION FORMATTING */
+
+#stats_container {
+    background-color: floralwhite;
+    color: dimgray;
+    width: 13%;
+    height: 30%;
+    border-radius: 10%;
+    float: left;
+    display: block;
+    opacity: 0.50;
+    overflow: hidden;
+}
+
+/* game container formatting */
+#body-container {
+    background-image: url(images/pres-seal.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 100vh;
+}
+
+#game-area {
+    overflow: hidden;
+    width: auto;
+    height: 100%;
+    padding-right: 1%;
+    position: relative;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 10%;
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 2%;
+    background-color: white;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    box-shadow: 3px 3px 1px #888888;
+
+}
+
+.front {
+    position: absolute;
+
+
+}
+
+.back {
+    position: absolute;
+    background-color: white;
+
+
+}
+
+/*ABOUT PAGE STYLING */
+
+
+.about-heading {
+    font-family: 'Lobster', cursive;
+}
+
+#about-container {
+    width: 90%;
+    border: 1px black solid;
+    margin: 0 5%;
+    box-shadow: 10px 10px 5px #888888;
+    border-radius: 20%;
+    overflow: hidden;
+    background-color: white;
+}
+
+#pic-me {
+    height: auto;
+    width: 80%;
+    display: inline;
+
+}
+
+.about-content {
+    font-family: 'Cardo', serif;
+    display: inline;
+    font-size: 1.3em;
+}
+
+#portfolio-link a {
+    color: pink;
+}
+
