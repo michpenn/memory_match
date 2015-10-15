@@ -7,6 +7,7 @@
     <title>Memory Match</title>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
+    <script src="memory_game.js"></script>
 
 </head>
 <body>
@@ -38,7 +39,7 @@
     <!--plan: make the quote cards have the first few words of the quote. When you click on
     the quote, a modal pops up with the full quote. When the cards are matched, a youtube clip
     with the quote appears -->
-        <div class="trump card">
+        <div class="trump card" onclick="card_clicked();">
             <div class="front"><img src="images/trump.jpg"></div>
             <div class="back"><img src="images/2016.png"></div>
         </div>
@@ -46,77 +47,20 @@
             <div class="front"><img src="images/trump.jpg"></div>
             <div class="back"><img src="images/2016.png"></div>
         </div>
-        <div class="rubio card">
-            <div class="front"><img src="images/rubio.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="rubio card">
-            <div class="front"><img src="images/rubio.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="clinton card">
-            <div class="front"><img src="images/clinton.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="clinton card">
-            <div class="front"><img src="images/clinton.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="bush card">
-            <div class="front"><img src="images/bush.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="bush card">
-            <div class="front"><img src="images/bush.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="sanders card">
-            <div class="front"><img src="images/sanders.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="sanders card">
-            <div class="front"><img src="images/sanders.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="card">
-            <div class="front"><img src="images/carson.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="carson card">
-            <div class="front"><img src="images/carson.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="carson card">
-            <div class="front"><img src="images/fiorina.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="card">
-            <div class="front"><img src="images/fiorina.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="cruz card">
-            <div class="front"><img src="images/cruz.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="cruz card">
-            <div class="front"><img src="images/cruz.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="huckabee card">
-            <div class="front"><img src="images/huckabee.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="huckabee card">
-            <div class="front"><img src="images/huckabee.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-    </div>
-</div>
 
-</div>
+        <div class="clinton card">
+            <div class="front"><img src="images/clinton.jpg"></div>
+            <div class="back"><img src="images/2016.png"></div>
+        </div>
+        <div class="clinton card">
+            <div class="front"><img src="images/clinton.jpg"></div>
+            <div class="back"><img src="images/2016.png"></div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+
+
 </body>
 </html>
