@@ -4,7 +4,7 @@ header {
     height: 25%;
     background-image: url(images/america_banner2.jpg);
     background-repeat: no-repeat;
-    background-color: #060030;
+    background-color: #EBEFF0;
     background-size: 100% auto;
     overflow: hidden;
     display: block;
@@ -53,12 +53,18 @@ header {
     background-color: floralwhite;
     color: dimgray;
     width: 13%;
-    height: 30%;
+    height: auto;
     border-radius: 10%;
+    padding-bottom: 2%;
+    margin-top: 2%;
     float: left;
     display: block;
     opacity: 0.50;
-    overflow: hidden;
+    text-align: center;
+
+    .value {
+    text-align: center;
+}
 }
 
 /* game container formatting */
@@ -66,7 +72,7 @@ header {
     background-image: url(images/pres-seal.jpg);
     background-repeat: no-repeat;
     background-size: 100% auto;
-    height: 100vh;
+    height: 100%;
 }
 
 #game-area {
@@ -95,24 +101,21 @@ header {
 .front {
     position: absolute;
 
-
 }
 
 .back {
     position: absolute;
     background-color: white;
 
-
 }
+
 /*MATCH*/
 .match_class {
     transition-delay: 2s;
     visibility: hidden;
 }
 
-
 /*ABOUT PAGE STYLING */
-
 
 .about-heading {
     font-family: 'Lobster', cursive;

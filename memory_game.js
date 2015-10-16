@@ -5,9 +5,12 @@ var first_card_clicked = null;
 var second_card_clicked = null;
 var total_possible_matches = 9;
 var match_counter = 0;
+var games_played = 0;
+var attempts = 0;
+var accuracy = 0;
 
 //When the card is clicked...
-function card_clicked (card_container_element) {
+function card_clicked(card_container_element) {
     console.clear();
     console.log("card_container_element: ", card_container_element);
 
@@ -16,8 +19,8 @@ function card_clicked (card_container_element) {
     console.log($(back_element).attr('card_src'));
     var card_src_data = $(back_element).attr('card_src');
     /*check if first_card_clicked is null,
-    if it is, then assign it */
-    if(first_card_clicked == null) {
+     if it is, then assign it */
+    if (first_card_clicked == null) {
         console.log('This is the first card we clicked');
         //first_card_clicked = card_src_data;
         first_card_clicked = card_container_element;
@@ -34,10 +37,16 @@ function card_clicked (card_container_element) {
             $(first_card_clicked).addClass('match_class');
             $(second_card_clicked).addClass('match_class');
 
+            //increment the attempts
+            attempts++;
+            console.log(attempts);
 
             //increment the match counter
-            match_counter ++;
+            match_counter++;
             console.log(match_counter);
+            //increment the accuracy
+            accuracy = (match_counter/attempts)*100+'%';
+            console.log(accuracy);
             //reset the variables
             first_card_clicked = null;
             second_card_clicked = null;
@@ -45,21 +54,43 @@ function card_clicked (card_container_element) {
             //check if match counter = total possible matches
             if (match_counter == total_possible_matches) {
                 console.log("You won!");
+                alert("You won!");
+                reset_cards();
+
             }
         }
         else {
             console.log('they don\'t match');
+            //increment attempts
+            attempts++;
+            //increment the accuracy
+            accuracy = (match_counter/attempts)*100+'%';
+            console.log(accuracy);
+            console.log(attempts);
             //make the cards flip back over
             var reset_card_1 = $(first_card_clicked).find('.back');
             console.log(reset_card_1);
             var reset_card_2 = $(second_card_clicked).find('.back');
-            console.log("this is reset card 2",second_card_clicked);
+            console.log("this is reset card 2", second_card_clicked);
             $(reset_card_1).show(2000);
             $(reset_card_2).show(2000);
             //reset the variables
             first_card_clicked = null;
             second_card_clicked = null;
-
         }
     }
+}
+//Reset button
+function reset_cards () {
+    $('.match_class').removeClass('match_class');
+    $('.back').show();
+    games_played++;
+    console.log('Games Played: '+ games_played,'Attempts: '+ attempts,'Accuracy: ' + accuracy);
+    first_card_clicked = null;
+    second_card_clicked = null;
+    console.log('reset works');
+    attempts = 0;
+    match_counter = 0;
+    accuracy = 0;
+    console.log('Games Played: '+ games_played,'Attempts: '+ attempts,'Accuracy: ' + accuracy);
 }
