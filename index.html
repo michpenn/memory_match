@@ -6,7 +6,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lobster|Cardo:400,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <title>Memory Match</title>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
+    <!--<script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script> -->
     <script src="memory_game.js"></script>
 
 </head>
@@ -39,22 +39,22 @@
     <!--plan: make the quote cards have the first few words of the quote. When you click on
     the quote, a modal pops up with the full quote. When the cards are matched, a youtube clip
     with the quote appears -->
-        <div class="trump card" onclick="card_clicked();">
+        <div class="trump card" onclick="card_clicked(this);">
             <div class="front"><img src="images/trump.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
+            <div class="back" card_src="trump" ><img src="images/2016.png"></div>
         </div>
-        <div class="trump card">
+        <div class="trump card" onclick="card_clicked(this);">
             <div class="front"><img src="images/trump.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
+            <div class="back" card_src="trump"><img src="images/2016.png"></div>
         </div>
 
-        <div class="clinton card">
+        <div class="clinton card" onclick="card_clicked(this);">
             <div class="front"><img src="images/clinton.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
+            <div class="back" card_src="clinton"><img src="images/2016.png"></div>
         </div>
-        <div class="clinton card">
+        <div class="clinton card" onclick="card_clicked(this);">
             <div class="front"><img src="images/clinton.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
+            <div class="back" card_src="clinton"><img src="images/2016.png"></div>
         </div>
     </div>
         </div>
