@@ -59,7 +59,7 @@ header {
     margin-top: 2%;
     float: left;
     display: block;
-    opacity: 0.50;
+    opacity: 0.90;
     text-align: center;
 
     .value {
@@ -69,10 +69,10 @@ header {
 
 /* game container formatting */
 #body-container {
-    background-image: url(images/pres-seal.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-image: url(images/25b29318.png);
+    background-repeat: repeat;
     height: 100%;
+    padding-bottom: 5%;
 }
 
 #game-area {
@@ -81,6 +81,7 @@ header {
     height: 100%;
     padding-right: 1%;
     position: relative;
+    align-content: center;
 }
 
 .card {
@@ -114,6 +115,7 @@ header {
     transition-delay: 2s;
     visibility: hidden;
 }
+
 
 /*ABOUT PAGE STYLING */
 
