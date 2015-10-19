@@ -6,8 +6,10 @@ var second_card_clicked = null;
 var total_possible_matches = 9;
 var match_counter = 0;
 var games_played = 0;
+var matches = 0;
 var attempts = 0;
 var accuracy = 0;
+
 
 //When the card is clicked...
 function card_clicked(card_container_element) {
@@ -22,7 +24,6 @@ function card_clicked(card_container_element) {
      if it is, then assign it */
     if (first_card_clicked == null) {
         console.log('This is the first card we clicked');
-        //first_card_clicked = card_src_data;
         first_card_clicked = card_container_element;
     }
     //assigns second_card_clicked variable
@@ -45,8 +46,10 @@ function card_clicked(card_container_element) {
             match_counter++;
             console.log(match_counter);
             //increment the accuracy
-            accuracy = (match_counter/attempts)*100+'%';
+            accuracy = (match_counter/attempts)*100;
             console.log(accuracy);
+            //update stats
+            display_stats();
             //reset the variables
             first_card_clicked = null;
             second_card_clicked = null;
@@ -64,9 +67,11 @@ function card_clicked(card_container_element) {
             //increment attempts
             attempts++;
             //increment the accuracy
-            accuracy = (match_counter/attempts)*100+'%';
+            accuracy = (match_counter/attempts)*100;
             console.log(accuracy);
             console.log(attempts);
+            //update stats
+            display_stats();
             //make the cards flip back over
             var reset_card_1 = $(first_card_clicked).find('.back');
             console.log(reset_card_1);
@@ -93,4 +98,14 @@ function reset_cards () {
     match_counter = 0;
     accuracy = 0;
     console.log('Games Played: '+ games_played,'Attempts: '+ attempts,'Accuracy: ' + accuracy);
+    console.log(display_stats());
+}
+
+//display status function
+function display_stats(){
+    $('.games-played .value').empty().append(games_played);
+    $('.attempts .value').empty().append(attempts);
+    var accuracy2 = accuracy.toPrecision(3);
+    $('.accuracy .value').empty().append(accuracy2 + '%');
+
 }
