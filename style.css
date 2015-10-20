@@ -150,3 +150,69 @@ header {
     color: pink;
 }
 
+/*Popup
+
+#my_popup {
+    border: 1px solid black;
+    border-radius: 20%;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    box-shadow: 10px 10px 5px #888888;
+    background-color: blue;
+    opacity: 0.2;
+
+}
+
+.quote-text {
+    color: red;
+    position: fixed;
+    top:20%;
+    left: 20%;
+}
+
+.my_popup_close {
+    position: fixed;
+    right: 20%;
+
+}
+
+*/
+
+/*win
+.winning-div {
+    display: none;
+}
+
+#winning {
+    color: white;
+    transition-duration: 10s;
+    animation-name: zoomOutLeft;
+}
+*/
+
+/*POPUP. WORK IN PROGRESS */
+#my_popup {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    border: 1px black solid;
+    background-color: blue;
+}
+
+.quote-text {
+    position: absolute;
+    top: 6%;
+    left: 30%;
+    z-index: 5;
+}
+
+.candidate-pic {
+    height: 150px;
+    width: 150px;
+    border: 1px black solid;
+    position: absolute;
+    top: 70%;
+    right: 92%;
+    background-color: white;
+}

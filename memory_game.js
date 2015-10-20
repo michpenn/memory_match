@@ -10,6 +10,11 @@ var matches = 0;
 var attempts = 0;
 var accuracy = 0;
 
+$('document').ready(function() {
+   $('#game-area').on('click','#my_popup', function() {
+       $(this).remove();
+   });
+});
 
 //When the card is clicked...
 function card_clicked(card_container_element) {
@@ -24,6 +29,7 @@ function card_clicked(card_container_element) {
      if it is, then assign it */
     if (first_card_clicked == null) {
         console.log('This is the first card we clicked');
+        $('#my_popup').remove();
         first_card_clicked = card_container_element;
     }
     //assigns second_card_clicked variable
@@ -37,7 +43,9 @@ function card_clicked(card_container_element) {
             console.log('they match');
             $(first_card_clicked).addClass('match_class');
             $(second_card_clicked).addClass('match_class');
-
+            //Work In Progress: Show Quote
+            popUp();
+            //$('#my_popup').popup();
             //increment the attempts
             attempts++;
             console.log(attempts);
@@ -57,8 +65,9 @@ function card_clicked(card_container_element) {
             //check if match counter = total possible matches
             if (match_counter == total_possible_matches) {
                 console.log("You won!");
-                alert("You won!");
-                reset_cards();
+                //$('.winning-div').css("display", "block");
+                setTimeout(function() {reset_cards(); }, 5000);
+                //$('.winning-div').css("display", "none");
 
             }
         }
@@ -108,4 +117,28 @@ function display_stats(){
     var accuracy2 = accuracy.toPrecision(3);
     $('.accuracy .value').empty().append(accuracy2 + '%');
 
+}
+
+function popUp(){
+    var popup = $("<div>", {
+        id: "my_popup"
+    });
+
+    var img = $("<img>", {
+        src: "http://chattertainment.com/wp-content/uploads/2014/03/cartoon-speech-bubble-hi.png",
+        class: "bubble"
+    });
+
+    var candidate = $("<div>", {
+        class: "candidate-pic"
+    });
+
+    var message = $("<p>", {
+        text: "This is the quote text",
+        class: "quote-text"
+    });
+
+    popup.append(img, message, candidate);
+
+    $('#game-area').append(popup);
 }
