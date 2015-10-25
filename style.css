@@ -1,4 +1,152 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(images/podium1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+/*opening buttons*/
+.buttons-container {
+    align-content: center;
+    position: absolute;
+    top: 55%;
+    left: 35%;
+    width: 100%;
+
+}
+
+.button {
+    background-color: darkblue;
+    color: white;
+    height: 15%;
+    width: 15%;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 1.2em;
+    border-radius: 50%;
+}
+
+a[href*="#openModal"] {
+    text-decoration: none;
+    color: white;
+}
+/*Modal Styling*/
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.modalDialog > div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.modalDialog > div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+    background: #00d9ff;
+}
+/*Footer Formatting*/
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    background-color: #444;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-bottom: 1px solid #888;
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+}
+
+nav a:hover {
+    background-color: #fff;
+    color: #444;
+    cursor: default;
+}
+
+
+
+
+
 /*game page formatting */
+/*
 header {
     width: 100%;
     height: 25%;
@@ -46,9 +194,9 @@ header {
     color: red;
     text-transform: uppercase;
 }
-
+*/
 /* STATS SECTION FORMATTING */
-
+/*
 #stats_container {
     background-color: floralwhite;
     color: dimgray;
@@ -66,14 +214,83 @@ header {
     text-align: center;
 }
 }
+*/
+/* body formatting */
 
-/* game container formatting */
 #body-container {
     background-image: url(images/25b29318.png);
     background-repeat: repeat;
-    height: 100%;
-    padding-bottom: 5%;
+    opacity: 0.9;
+    height: 95%;
+    width: 98%;
+    border: 1px white solid;
+    border-radius: 10%;
+    display: inline-block;
+    box-shadow: 5px 5px 2px #888888;
+    overflow: hidden;
 }
+
+/*game area formatting*/
+.game-area {
+    width: auto;
+}
+
+.row {
+    display: none;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 10%;
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 2%;
+    background-color: white;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    box-shadow: 3px 3px 1px #888888;
+
+}
+.front {
+    position: absolute;
+}
+
+.back {
+    position: absolute;
+    background-color: white;
+}
+
+/*stats container formatting*/
+#stats_container {
+    background-color: transparent;
+    color: white;
+    box-shadow: 2px 2px 2px #888888;
+    width: 8%;
+    height: auto;
+    border-radius: 2%;
+    padding-bottom: 2%;
+    margin-top: 2%;
+    float: left;
+    display: block;
+    text-align: center;
+}
+
+.reset-button {
+    background-color: white;
+    color: black;
+}
+
+.label {
+    display: inline-block;
+    color: white;
+}
+
+.value {
+    display: inline-block;
+}
+/*
 
 #game-area {
     overflow: hidden;
@@ -109,13 +326,14 @@ header {
     background-color: white;
 
 }
-
+*/
 /*MATCH*/
+/*
 .match_class {
     transition-delay: 2s;
     visibility: hidden;
 }
-
+*/
 
 /*ABOUT PAGE STYLING */
 
@@ -192,6 +410,7 @@ header {
 */
 
 /*POPUP. WORK IN PROGRESS */
+/*
 #my_popup {
     position: absolute;
     top: 0;
@@ -216,3 +435,4 @@ header {
     right: 92%;
     background-color: white;
 }
+*/

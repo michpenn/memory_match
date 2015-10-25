@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lobster|Cardo:400,400italic&subset=latin,latin-ext'
-          rel='stylesheet' type='text/css'>
+    <!--<link href='https://fonts.googleapis.com/css?family=Lobster|Cardo:400,400italic&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'> -->
     <title>Memory Match</title>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <!--<script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script> -->
@@ -12,13 +12,38 @@
 
 </head>
 <body>
-<header>
-    <h1 class="game-title">How Well Do You Know Your Candidates?</h1>
-    <ul class="nav-bar">
-        <li><a href="#">Settings</a></li>
-        <li><a href="about.html">About</a></li>
-    </ul>
-</header>
+<div class="buttons-container">
+    <button type="button" name="instructions" class="button" id="button_instructions" onclick="instructions()">
+        <a href="#openModal">Instructions</a>
+    </button>
+    <div id="openModal" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close" onclick="startGame()">X</a>
+            <h2>Instructions</h2>
+            <p>Welcome to my memory match game!<br>
+                As a player, you will be matching pictures of
+            various presidential candidates. <br>
+                Upon a correct match, a ridiculous quote from that candidate will pop up.
+                <br>Do not believe the quote? <br>
+                Click the "Quotes Explained" link at the bottom of the page
+            for more information.
+            <br><br>Good Luck!</p>
+        </div>
+    </div>
+    <button type="button" name="startgame" class="button" id="button_playgame" onclick="startGame()">Play Game</button>
+</div>
+
+<footer>
+    <nav>
+        <ul>
+            <li><a href="#">Settings</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Quotes Explained</a></li>
+        </ul>
+    </nav>
+</footer>
+
+<!--
 <div id="body-container">
     <div id="stats_container">
         <div class="games-played">
@@ -35,7 +60,7 @@
         </div>
         <button class="reset" onclick="reset_cards();">Reset Game</button>
     </div>
-    <div id="game-area">
+    <div id="game-area"> -->
         <div class="row">
             <!--plan: make the quote cards have the first few words of the quote. When you click on
             the quote, a modal pops up with the full quote. When the cards are matched, a youtube clip
@@ -118,7 +143,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
     <!--YOU WON POPUP. WORK IN PROGRESS
     <div class="winning-div">
         <h1 id="winning">YOU WON!</h1>
