@@ -44,7 +44,7 @@ function card_clicked(card_container_element) {
             $(first_card_clicked).addClass('match_class');
             $(second_card_clicked).addClass('match_class');
             //Work In Progress: Show Quote
-            popUp();
+            setTimeout(popUp,2000);
             //$('#my_popup').popup();
             //increment the attempts
             attempts++;
@@ -65,6 +65,7 @@ function card_clicked(card_container_element) {
             //check if match counter = total possible matches
             if (match_counter == total_possible_matches) {
                 console.log("You won!");
+                alert("You Won!");
                 //$('.winning-div').css("display", "block");
                 setTimeout(function() {reset_cards(); }, 5000);
                 //$('.winning-div').css("display", "none");
@@ -86,8 +87,8 @@ function card_clicked(card_container_element) {
             console.log(reset_card_1);
             var reset_card_2 = $(second_card_clicked).find('.back');
             console.log("this is reset card 2", second_card_clicked);
-            $(reset_card_1).show(2000);
-            $(reset_card_2).show(2000);
+            $(reset_card_1).show(3000);
+            $(reset_card_2).show(3000);
             //reset the variables
             first_card_clicked = null;
             second_card_clicked = null;
@@ -142,3 +143,5 @@ function popUp(){
 
     $('#game-area').append(popup);
 }
+
+
