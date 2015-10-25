@@ -1,6 +1,7 @@
 /**
  * Created by michpenn on 10/14/15.
  */
+
 var first_card_clicked = null;
 var second_card_clicked = null;
 var total_possible_matches = 9;
@@ -9,6 +10,7 @@ var games_played = 0;
 var matches = 0;
 var attempts = 0;
 var accuracy = 0;
+
 
 /*var backcard = 'images/2016.png';
 
@@ -29,16 +31,17 @@ frontcard[11] = 'images/huckabee.jpg';
 var numOfMatches = 0.5* frontcard.length;
 var tid; */
 
-
+/*
 
 $('document').ready(function() {
    $('#game-area').on('click','#my_popup', function() {
        $(this).remove();
    });
 });
-
+*/
 
 //When the card is clicked...
+
 function card_clicked(card_container_element) {
     console.clear();
     console.log("card_container_element: ", card_container_element);
@@ -49,6 +52,7 @@ function card_clicked(card_container_element) {
     var card_src_data = $(back_element).attr('card_src');
     /*check if first_card_clicked is null,
      if it is, then assign it */
+
     if (first_card_clicked == null) {
         console.log('This is the first card we clicked');
         $('#my_popup').remove();
@@ -57,16 +61,14 @@ function card_clicked(card_container_element) {
     //assigns second_card_clicked variable
     else {
         console.log('This is the second card we clicked');
-        //second_card_clicked = card_src_data;
         second_card_clicked = card_container_element;
         //checks if the cards match
         var first_src = $(first_card_clicked).find('.back').attr('card_src');
         if (first_src == card_src_data) {
             console.log('they match');
-            $(first_card_clicked).addClass('match_class');
-            $(second_card_clicked).addClass('match_class');
+            setTimeout(makeAMatch(),1000);
             //Work In Progress: Show Quote
-            setTimeout(popUp,2000);
+            //setTimeout(popUp,2000);
             //$('#my_popup').popup();
             //increment the attempts
             attempts++;
@@ -119,29 +121,35 @@ function card_clicked(card_container_element) {
 }
 //Reset button
 function reset_cards () {
+    console.log('reset button works');
     $('.match_class').removeClass('match_class');
     $('.back').show();
     games_played++;
-    console.log('Games Played: '+ games_played,'Attempts: '+ attempts,'Accuracy: ' + accuracy);
+    console.log('Games Played: ' + games_played, 'Attempts: ' + attempts, 'Accuracy: ' + accuracy);
     first_card_clicked = null;
     second_card_clicked = null;
     console.log('reset works');
     attempts = 0;
     match_counter = 0;
     accuracy = 0;
-    console.log('Games Played: '+ games_played,'Attempts: '+ attempts,'Accuracy: ' + accuracy);
+    console.log('Games Played: ' + games_played, 'Attempts: ' + attempts, 'Accuracy: ' + accuracy);
     console.log(display_stats());
 }
 
-//display status function
+//display stats function
 function display_stats(){
     $('.games-played .value').empty().append(games_played);
     $('.attempts .value').empty().append(attempts);
-    var accuracy2 = accuracy.toPrecision(3);
+    var accuracy2 = Math.round(accuracy);
     $('.accuracy .value').empty().append(accuracy2 + '%');
 
 }
+function makeAMatch() {
+    $(first_card_clicked).addClass('match_class');
+    $(second_card_clicked).addClass('match_class');
+}
 
+/*
 function popUp(){
     var popup = $("<div>", {
         id: "my_popup"
@@ -163,17 +171,8 @@ function popUp(){
 
     popup.append(img, message, candidate);
 
-    $('#game-area').append(popup);
-}
+    $('#game-area').append(popup); */
 
-//Instructions Modal
-function instructions() {
-    console.log('instructions loaded');
-    /*var instructions = $('<div>',{
-        id: 'openModal',
-        class: 'modalDialog'
-    }) */
-}
 
 function startGame() {
     console.log('let the games begin');
@@ -184,20 +183,21 @@ function startGame() {
     var stats_container = $('<div>', {
         id: 'stats_container'
     });
-    var games_played =$('<div>', {
+    var games_played2 =$('<div>', {
         class: 'games-played'
     });
-    var attempts =$('<div>', {
+    var attempts2 =$('<div>', {
         class: 'attempts'
     });
-    var accuracy =$('<div>', {
+    var accuracy2 =$('<div>', {
         class: 'accuracy'
     });
-    var reset_cards =$('<button>', {
-        class: 'reset-button',
-        onclick: 'reset_cards()',
-        text: 'Reset Cards'
-    })
+    var reset_cards2 =$('<button>', {
+         type:"button",
+        name: "reset",
+        id: 'reset_button',
+        text: 'Reset'
+    });
     var label_games_played =$('<h4>', {
         class: 'label',
         text: 'Games Played: '
@@ -214,17 +214,39 @@ function startGame() {
         class: 'game-area'
     });
 
-    $(stats_container).append(games_played, attempts, accuracy, reset_cards);
-    $(games_played).append(label_games_played);
-    $(attempts).append(label_attempts);
-    $(accuracy).append(label_accuracy);
+    var data_games_played = $('<p>', {
+        class: 'value games-played',
+        text: ''
+    });
+
+    var data_attempts = $('<p>', {
+        class: 'value attempts',
+        text: ''
+    });
+
+    var data_accuracy = $('<p>', {
+        class: 'value accuracy',
+        text: ''
+    });
+
+
+    $(stats_container).append(games_played2, attempts2, accuracy2).append(reset_cards2);
+    $(games_played2).append(label_games_played, data_games_played);
+    $(attempts2).append(label_attempts, data_attempts);
+    $(accuracy2).append(label_accuracy, data_accuracy);
     $(body_container).append(stats_container, game_area);
     $('body').append(body_container);
-
     var rows = $('.row').css('display','block');
     $(game_area).append(rows);
 
 }
 
+var winning = $('<h1>', {
+    id: 'winning',
+    text: 'You Won!'
+});
 
+function win() {
+    $(body_container).append(winning);
+}
 

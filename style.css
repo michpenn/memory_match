@@ -142,79 +142,6 @@ nav a:hover {
 }
 
 
-
-
-
-/*game page formatting */
-/*
-header {
-    width: 100%;
-    height: 25%;
-    background-image: url(images/america_banner2.jpg);
-    background-repeat: no-repeat;
-    background-color: #EBEFF0;
-    background-size: 100% auto;
-    overflow: hidden;
-    display: block;
-}
-
-.game-title {
-    color: white;
-    position: static;
-    font-family: 'Lobster', cursive;
-    margin-left: 2%;
-}
-
-.nav-bar {
-    font-family: 'Cardo', serif;
-}
-
-.nav-bar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-bar li {
-    display: inline;
-    margin: 4%;
-}
-
-.nav-bar a:link {
-    text-decoration: none;
-    color: white;
-}
-
-.nav-bar a:visited {
-    color: lightblue;
-}
-
-.nav-bar a:hover {
-    text-decoration: none;
-    color: red;
-    text-transform: uppercase;
-}
-*/
-/* STATS SECTION FORMATTING */
-/*
-#stats_container {
-    background-color: floralwhite;
-    color: dimgray;
-    width: 13%;
-    height: auto;
-    border-radius: 10%;
-    padding-bottom: 2%;
-    margin-top: 2%;
-    float: left;
-    display: block;
-    opacity: 0.90;
-    text-align: center;
-
-    .value {
-    text-align: center;
-}
-}
-*/
 /* body formatting */
 
 #body-container {
@@ -233,6 +160,9 @@ header {
 /*game area formatting*/
 .game-area {
     width: auto;
+    position: relative;
+    align-content: center;
+    display: block;
 }
 
 .row {
@@ -268,7 +198,7 @@ header {
     color: white;
     box-shadow: 2px 2px 2px #888888;
     width: 8%;
-    height: auto;
+    height: 100%;
     border-radius: 2%;
     padding-bottom: 2%;
     margin-top: 2%;
@@ -278,62 +208,54 @@ header {
 }
 
 .reset-button {
-    background-color: white;
-    color: black;
+    display: none;
 }
 
 .label {
-    display: inline-block;
+    display: block;
     color: white;
 }
 
 .value {
-    display: inline-block;
-}
-/*
-
-#game-area {
-    overflow: hidden;
-    width: auto;
-    height: 100%;
-    padding-right: 1%;
-    position: relative;
-    align-content: center;
+    display: block;
 }
 
-.card {
-    border: 1px solid black;
-    border-radius: 10%;
-    display: inline-block;
-    margin-left: 2%;
-    margin-top: 2%;
-    background-color: white;
-    overflow: hidden;
-    height: 150px;
-    width: 150px;
-    position: relative;
-    box-shadow: 3px 3px 1px #888888;
-
+#winning {
+    height: 250px;
+    width: 250px;
+    margin: 0 auto;
+    background-color: red;
+    animation-name: stretch;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-delay: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
 }
 
-.front {
-    position: absolute;
-
+@keyframes stretch {
+    0% {
+        transform: scale(.3);
+        background-color: red;
+        border-radius: 100%;
+    }
+    50% {
+        background-color: orange;
+    }
+    100% {
+        transform: scale(1.5);
+        background-color: yellow;
+    }
 }
-
-.back {
-    position: absolute;
-    background-color: white;
-
-}
-*/
 /*MATCH*/
-/*
+
 .match_class {
     transition-delay: 2s;
     visibility: hidden;
 }
-*/
+
 
 /*ABOUT PAGE STYLING */
 
