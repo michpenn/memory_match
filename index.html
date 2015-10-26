@@ -33,17 +33,36 @@
     <button type="button" name="startgame" class="button" id="button_playgame" onclick="startGame()">Play Game</button>
 </div>
 <!--
-<div id="openModal_quote" class="modalDialog">
-    <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <h2>This Candidate Said...</h2>
-        <p>speech bubble here</p>
-        <p>"Insert Silly Quote Here"</p>
+ <div id="openModal" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close" onclick="startGame()">X</a>
+            <h2>Instructions</h2>
+            <p>Welcome to my memory match game!<br>
+                As a player, you will be matching pictures of
+            various presidential candidates. <br>
+                Upon a correct match, a ridiculous quote from that candidate will pop up.
+                <br>Do not believe the quote? <br>
+                Click the "Quotes Explained" link at the bottom of the page
+            for more information.
+            <br><br>Good Luck!</p>
+        </div>
     </div>
 -->
 <div id="pop-up">
-    <h1>Does this work?</h1>
+    <div>
+        <a href="#close" title="Close" class="close" onclick="popUpHide()">X</a>
+        <h1>Quote bubble goes here</h1>
+        <h1>Quote pic goes here</h1>
+    </div>
 </div>
+
+<div id="winning">
+    <a href="#close" title="Close" class="close" onclick="winHide()">X</a>
+    <h1>
+        You Won!
+    </h1>
+</div>
+
 
 <footer>
     <nav>
@@ -157,11 +176,5 @@
             </div>
         </div>
 
-
-    <!--YOU WON POPUP. WORK IN PROGRESS
-    <div class="winning-div">
-        <h1 id="winning">YOU WON!</h1>
-    </div>
-    -->
     </body>
 </html>

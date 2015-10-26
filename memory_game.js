@@ -67,6 +67,7 @@ function card_clicked(card_container_element) {
         if (first_src == card_src_data) {
             console.log('they match');
             setTimeout(makeAMatch(),1000);
+            popUP();
             //Work In Progress: Show Quote
             //setTimeout(popUp,2000);
             //$('#my_popup').popUp();
@@ -89,6 +90,7 @@ function card_clicked(card_container_element) {
             //check if match counter = total possible matches
             if (match_counter == total_possible_matches) {
                 console.log("You won!");
+                win();
                 //winning();
                 //alert("You Won!");
                 //$('.winning-div').css("display", "block");
@@ -150,44 +152,7 @@ function makeAMatch() {
     $(second_card_clicked).addClass('match_class');
 }
 
-function quoteModal() {
-    $('#openModal_quote').modal();
-}
-/*
- <a href="#openModal_quote">Quote</a>
- </button>
- <div id="openModal_quote" class="modalDialog">
- <div>
- <a href="#close" title="Close" class="close">X</a>
- <h2>This Candidate Said...</h2>
- <p>speech bubble here</p>
- <p>"Insert Silly Quote Here"</p>
- </div>
-*/
-/*function popUp() {
-    var popup = $("<div>", {
-        id: "my_popup"
-    });
 
-    var img = $("<img>", {
-        src: "http://chattertainment.com/wp-content/uploads/2014/03/cartoon-speech-bubble-hi.png",
-        class: "bubble"
-    });
-
-    var candidate = $("<div>", {
-        class: "candidate-pic"
-    });
-
-    var message = $("<p>", {
-        text: "This is the quote text",
-        class: "quote-text"
-    });
-
-    popup.append(img, message, candidate);
-
-    $('.game-area').append(popup);
-}
-*/
 
 function startGame() {
     console.log('let the games begin');
@@ -255,6 +220,70 @@ function startGame() {
     $(game_area).append(rows);
 
 }
+
+//WORKING ON THE QUOTE MODAL, RESET BUTTON, AND WINNING HEADING
+
+function popUP() {
+    $('div#pop-up').show();
+
+}
+
+function popUpHide() {
+    $('div#pop-up').hide();
+}
+
+function win() {
+    popUpHide();
+    $('div#winning').show();
+}
+
+function winHide() {
+    $('div#winning').hide();
+}
+
+/*
+
+
+function quoteModal() {
+    $('#openModal_quote').modal();
+}
+/*
+ <a href="#openModal_quote">Quote</a>
+ </button>
+ <div id="openModal_quote" class="modalDialog">
+ <div>
+ <a href="#close" title="Close" class="close">X</a>
+ <h2>This Candidate Said...</h2>
+ <p>speech bubble here</p>
+ <p>"Insert Silly Quote Here"</p>
+ </div>
+ */
+/*function popUp() {
+ var popup = $("<div>", {
+ id: "my_popup"
+ });
+
+ var img = $("<img>", {
+ src: "http://chattertainment.com/wp-content/uploads/2014/03/cartoon-speech-bubble-hi.png",
+ class: "bubble"
+ });
+
+ var candidate = $("<div>", {
+ class: "candidate-pic"
+ });
+
+ var message = $("<p>", {
+ text: "This is the quote text",
+ class: "quote-text"
+ });
+
+ popup.append(img, message, candidate);
+
+ $('.game-area').append(popup);
+ }
+ */
+
+
 
 /*var winning = $('<h1>', {
     id: 'winning',

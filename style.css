@@ -63,23 +63,6 @@ a[href*="#openModal"] {
     background: -o-linear-gradient(#fff, #999);
 }
 
-.modalDialog:target {
-    opacity:1;
-    pointer-events: auto;
-}
-
-.modalDialog > div {
-    width: 400px;
-    position: relative;
-    margin: 10% auto;
-    padding: 5px 20px 13px 20px;
-    border-radius: 10px;
-    background: #fff;
-    background: -moz-linear-gradient(#fff, #999);
-    background: -webkit-linear-gradient(#fff, #999);
-    background: -o-linear-gradient(#fff, #999);
-}
-
 .close {
     background: #606061;
     color: #FFFFFF;
@@ -102,6 +85,78 @@ a[href*="#openModal"] {
 .close:hover {
     background: #00d9ff;
 }
+
+/*Quote Pop Up*/
+div#pop-up {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: auto;
+    padding: 10px;
+    background: pink;
+    color: black;
+    z-index: 10;
+}
+
+/*Win Popup*/
+div#winning {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    width: auto;
+    padding: 10px;
+    background: pink;
+    color: black;
+    z-index: 10;
+}
+
+/*
+
+*/
+
+/*win
+.winning-div {
+    display: none;
+}
+
+#winning {
+    color: white;
+    transition-duration: 10s;
+    animation-name: zoomOutLeft;
+}
+*/
+*/
+/*POPUP. WORK IN PROGRESS */
+/*
+#my_popup {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    border: 1px black solid;
+    background-color: blue;
+}
+
+.quote-text {
+    position: absolute;
+    top: 6%;
+    left: 30%;
+    z-index: 5;
+}
+
+.candidate-pic {
+    height: 150px;
+    width: 150px;
+    border: 1px black solid;
+    position: absolute;
+    top: 70%;
+    right: 92%;
+    background-color: white;
+}
+*/
+
+
 /*Footer Formatting*/
 footer {
     position: fixed;
@@ -220,7 +275,7 @@ nav a:hover {
     display: block;
 }
 
-#winning {
+/*#winning {
     height: 250px;
     width: 250px;
     margin: 0 auto;
@@ -250,6 +305,7 @@ nav a:hover {
         background-color: yellow;
     }
 }
+*/
 /*MATCH*/
 
 .match_class {
@@ -318,53 +374,5 @@ nav a:hover {
 
 }
 
-*/
 
-/*win
-.winning-div {
-    display: none;
-}
 
-#winning {
-    color: white;
-    transition-duration: 10s;
-    animation-name: zoomOutLeft;
-}
-*/
-
-/*POPUP. WORK IN PROGRESS */
-/*
-#my_popup {
-    position: absolute;
-    top: 0;
-    left: 20%;
-    border: 1px black solid;
-    background-color: blue;
-}
-
-.quote-text {
-    position: absolute;
-    top: 6%;
-    left: 30%;
-    z-index: 5;
-}
-
-.candidate-pic {
-    height: 150px;
-    width: 150px;
-    border: 1px black solid;
-    position: absolute;
-    top: 70%;
-    right: 92%;
-    background-color: white;
-}
-*/
-
-div#pop-up {
-    display: none;
-    position: absolute;
-    width: 280px;
-    padding: 10px;
-    background: pink;
-    color: black;
-}
