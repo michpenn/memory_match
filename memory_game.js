@@ -10,39 +10,17 @@ var games_played = 0;
 var matches = 0;
 var attempts = 0;
 var accuracy = 0;
+var displaying_match = false;
 
 
-/*var backcard = 'images/2016.png';
 
-var frontcard = [];
-frontcard[0] = 'images/bush.jpg';
-frontcard[1] = 'images/carson.jpg';
-frontcard[2] = 'images/clinton.jpg';
-frontcard[3] = 'images/cruz.jpg';
-frontcard[4] = 'images/fiorina.jpg';
-frontcard[5] = 'images/huckabee.jpg';
-frontcard[6] = 'images/bush.jpg';
-frontcard[7] = 'images/carson.jpg';
-frontcard[8] = 'images/clinton.jpg';
-frontcard[9] = 'images/cruz.jpg';
-frontcard[10] = 'images/fiorina.jpg';
-frontcard[11] = 'images/huckabee.jpg';
-
-var numOfMatches = 0.5* frontcard.length;
-var tid; */
-
-/*
-
-$('document').ready(function() {
-   $('#game-area').on('click','#my_popup', function() {
-       $(this).remove();
-   });
-});
-*/
 
 //When the card is clicked...
 
 function card_clicked(card_container_element) {
+    if (displaying_match) {
+        return;
+    }
     console.clear();
     console.log("card_container_element: ", card_container_element);
 
@@ -67,7 +45,7 @@ function card_clicked(card_container_element) {
         if (first_src == card_src_data) {
             console.log('they match');
             setTimeout(makeAMatch(),1000);
-            popUP();
+            popUP(first_src);
             //Work In Progress: Show Quote
             //setTimeout(popUp,2000);
             //$('#my_popup').popUp();
@@ -218,18 +196,25 @@ function startGame() {
     $('body').append(body_container);
     var rows = $('.row').css('display','block');
     $(game_area).append(rows);
+    $(reset_cards2).click(reset_cards());
 
 }
 
 //WORKING ON THE QUOTE MODAL, RESET BUTTON, AND WINNING HEADING
 
-function popUP() {
+function popUP(person) {
+    displaying_match = true;
     $('div#pop-up').show();
-
+    var img_src = $('.'+person).find('img').attr('src');
+    var person_img = $('<img>', {
+        src: img_src
+    });
+    $('#candidatepic').html(person_img);
 }
 
 function popUpHide() {
     $('div#pop-up').hide();
+    displaying_match = false;
 }
 
 function win() {
@@ -296,3 +281,31 @@ function win() {
 }
 
 */
+/* ATTEMPT TO RANDOMIZE
+var backcard = 'images/2016.png';
+
+ var frontcard = [];
+ frontcard[0] = 'images/bush.jpg';
+ frontcard[1] = 'images/carson.jpg';
+ frontcard[2] = 'images/clinton.jpg';
+ frontcard[3] = 'images/cruz.jpg';
+ frontcard[4] = 'images/fiorina.jpg';
+ frontcard[5] = 'images/huckabee.jpg';
+ frontcard[6] = 'images/bush.jpg';
+ frontcard[7] = 'images/carson.jpg';
+ frontcard[8] = 'images/clinton.jpg';
+ frontcard[9] = 'images/cruz.jpg';
+ frontcard[10] = 'images/fiorina.jpg';
+ frontcard[11] = 'images/huckabee.jpg';
+
+ var numOfMatches = 0.5* frontcard.length;
+ var tid; */
+
+/*
+
+ $('document').ready(function() {
+ $('#game-area').on('click','#my_popup', function() {
+ $(this).remove();
+ });
+ });
+ */

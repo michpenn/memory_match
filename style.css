@@ -86,18 +86,33 @@ a[href*="#openModal"] {
     background: #00d9ff;
 }
 
+
 /*Quote Pop Up*/
 div#pop-up {
     display: none;
     position: absolute;
-    top: 0;
+    top: 10%;
     left: 20%;
-    width: auto;
+    max-height: auto;
     padding: 10px;
     background: pink;
     color: black;
     z-index: 10;
 }
+
+#speechbubble img {
+position: fixed;
+}
+
+#candidatepic {
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    bottom: 0;
+    right: 100px;
+}
+
 
 /*Win Popup*/
 div#winning {
@@ -127,7 +142,7 @@ div#winning {
     animation-name: zoomOutLeft;
 }
 */
-*/
+
 /*POPUP. WORK IN PROGRESS */
 /*
 #my_popup {
@@ -219,6 +234,8 @@ nav a:hover {
     align-content: center;
     display: block;
 }
+
+/*reset button*/
 
 .row {
     display: none;
