@@ -121,61 +121,52 @@ div#pop-up {
 
 
 /*Win Popup*/
-div#winning {
+
+
+#winning {
+    height: 70%;
+    width: 70%;
+    margin: 0 auto;
+    background-color: red;
+    animation-name: stretch;
+    animation-duration: 8s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: none;
+    animation-play-state: running;
     display: none;
     position: absolute;
-    top: 50%;
-    left: 20%;
-    width: auto;
-    padding: 10px;
-    background: pink;
-    color: black;
     z-index: 10;
 }
 
-/*
-
-*/
-
-/*win
-.winning-div {
-    display: none;
+#winning h1 {
+    text-align: center;
 }
 
-#winning {
-    color: white;
-    transition-duration: 10s;
-    animation-name: zoomOutLeft;
-}
-*/
+@keyframes stretch {
+    0% {
+        transform: scale(.3);
+        background-color: red;
+        border-radius: 100%;
+    }
+    50% {
+        background-color: orange;
+    }
+    100% {
+        transform: scale(1.5);
+        background-color: yellow;
+    }
 
-/*POPUP. WORK IN PROGRESS */
-/*
-#my_popup {
-    position: absolute;
-    top: 0;
-    left: 20%;
-    border: 1px black solid;
-    background-color: blue;
-}
+    50% {
+        background-color: blue;
+    }
 
-.quote-text {
-    position: absolute;
-    top: 6%;
-    left: 30%;
-    z-index: 5;
-}
+    25% {
+        background-color: darkred;
+    }
 
-.candidate-pic {
-    height: 150px;
-    width: 150px;
-    border: 1px black solid;
-    position: absolute;
-    top: 70%;
-    right: 92%;
-    background-color: white;
 }
-*/
 
 
 /*Footer Formatting*/
@@ -285,9 +276,9 @@ nav a:hover {
     text-align: center;
 }
 
-.reset-button {
+/*.reset-button {
     display: none;
-}
+} */
 
 .label {
     display: block;
@@ -298,37 +289,7 @@ nav a:hover {
     display: block;
 }
 
-/*#winning {
-    height: 250px;
-    width: 250px;
-    margin: 0 auto;
-    background-color: red;
-    animation-name: stretch;
-    animation-duration: 10s;
-    animation-timing-function: ease-out;
-    animation-delay: 3s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    display: none;
-}
 
-@keyframes stretch {
-    0% {
-        transform: scale(.3);
-        background-color: red;
-        border-radius: 100%;
-    }
-    50% {
-        background-color: orange;
-    }
-    100% {
-        transform: scale(1.5);
-        background-color: yellow;
-    }
-}
-*/
 /*MATCH*/
 
 .match_class {
@@ -370,32 +331,7 @@ nav a:hover {
     color: pink;
 }
 
-/*Popup
 
-#my_popup {
-    border: 1px solid black;
-    border-radius: 20%;
-    overflow: hidden;
-    height: auto;
-    width: auto;
-    box-shadow: 10px 10px 5px #888888;
-    background-color: blue;
-    opacity: 0.2;
-
-}
-
-.quote-text {
-    color: red;
-    position: fixed;
-    top:20%;
-    left: 20%;
-}
-
-.my_popup_close {
-    position: fixed;
-    right: 20%;
-
-}
 
 
 

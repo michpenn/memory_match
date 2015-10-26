@@ -68,11 +68,11 @@ function card_clicked(card_container_element) {
             //check if match counter = total possible matches
             if (match_counter == total_possible_matches) {
                 console.log("You won!");
-                win();
+                $('div#pop-up>a').click(win());
                 //winning();
                 //alert("You Won!");
                 //$('.winning-div').css("display", "block");
-                setTimeout(function() {reset_cards(); }, 5000);
+                //setTimeout(function() {reset_cards(); }, 5000);
                 //$('.winning-div').css("display", "none");
 
             }
@@ -150,12 +150,6 @@ function startGame() {
     var accuracy2 =$('<div>', {
         class: 'accuracy'
     });
-    var reset_cards2 =$('<button>', {
-         type:"button",
-        name: "reset",
-        id: 'reset_button',
-        text: 'Reset'
-    });
     var label_games_played =$('<h4>', {
         class: 'label',
         text: 'Games Played: '
@@ -187,8 +181,8 @@ function startGame() {
         text: ''
     });
 
-
-    $(stats_container).append(games_played2, attempts2, accuracy2).append(reset_cards2);
+    var reset_button = $('.reset').css('display','block');
+    $(stats_container).append(games_played2, attempts2, accuracy2).append(reset_button);
     $(games_played2).append(label_games_played, data_games_played);
     $(attempts2).append(label_attempts, data_attempts);
     $(accuracy2).append(label_accuracy, data_accuracy);
@@ -196,7 +190,7 @@ function startGame() {
     $('body').append(body_container);
     var rows = $('.row').css('display','block');
     $(game_area).append(rows);
-    $(reset_cards2).click(reset_cards());
+    //$(reset_cards2).click(reset_cards());
 
 }
 
@@ -218,12 +212,13 @@ function popUpHide() {
 }
 
 function win() {
-    popUpHide();
     $('div#winning').show();
+    setTimeout(function() {winHide(); }, 8000);
 }
 
 function winHide() {
     $('div#winning').hide();
+    setTimeout(function() {reset_cards(); }, 3000);
 }
 
 /*
