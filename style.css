@@ -226,13 +226,14 @@ nav a:hover {
     margin: 0 auto;
     background-color: red;
     animation-name: stretch;
-    animation-duration: 5s;
+    animation-duration: 10s;
     animation-timing-function: ease-out;
     animation-delay: 3s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-fill-mode: none;
     animation-play-state: running;
+    display: none;
 }
 
 @keyframes stretch {
@@ -358,3 +359,12 @@ nav a:hover {
     background-color: white;
 }
 */
+
+div#pop-up {
+    display: none;
+    position: absolute;
+    width: 280px;
+    padding: 10px;
+    background: pink;
+    color: black;
+}

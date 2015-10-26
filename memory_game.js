@@ -69,7 +69,7 @@ function card_clicked(card_container_element) {
             setTimeout(makeAMatch(),1000);
             //Work In Progress: Show Quote
             //setTimeout(popUp,2000);
-            //$('#my_popup').popup();
+            //$('#my_popup').popUp();
             //increment the attempts
             attempts++;
             console.log(attempts);
@@ -89,7 +89,8 @@ function card_clicked(card_container_element) {
             //check if match counter = total possible matches
             if (match_counter == total_possible_matches) {
                 console.log("You won!");
-                alert("You Won!");
+                //winning();
+                //alert("You Won!");
                 //$('.winning-div').css("display", "block");
                 setTimeout(function() {reset_cards(); }, 5000);
                 //$('.winning-div').css("display", "none");
@@ -149,8 +150,21 @@ function makeAMatch() {
     $(second_card_clicked).addClass('match_class');
 }
 
+function quoteModal() {
+    $('#openModal_quote').modal();
+}
 /*
-function popUp(){
+ <a href="#openModal_quote">Quote</a>
+ </button>
+ <div id="openModal_quote" class="modalDialog">
+ <div>
+ <a href="#close" title="Close" class="close">X</a>
+ <h2>This Candidate Said...</h2>
+ <p>speech bubble here</p>
+ <p>"Insert Silly Quote Here"</p>
+ </div>
+*/
+/*function popUp() {
     var popup = $("<div>", {
         id: "my_popup"
     });
@@ -171,8 +185,9 @@ function popUp(){
 
     popup.append(img, message, candidate);
 
-    $('#game-area').append(popup); */
-
+    $('.game-area').append(popup);
+}
+*/
 
 function startGame() {
     console.log('let the games begin');
@@ -241,12 +256,14 @@ function startGame() {
 
 }
 
-var winning = $('<h1>', {
+/*var winning = $('<h1>', {
     id: 'winning',
     text: 'You Won!'
 });
 
 function win() {
+    $(winning).css('display', 'block');
     $(body_container).append(winning);
 }
 
+*/
