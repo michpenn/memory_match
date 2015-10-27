@@ -124,8 +124,8 @@ div#pop-up {
 
 
 #winning {
-    height: 70%;
-    width: 70%;
+    height: auto;
+    width: auto;
     margin: 0 auto;
     background-color: red;
     animation-name: stretch;
@@ -136,12 +136,16 @@ div#pop-up {
     animation-fill-mode: none;
     animation-play-state: running;
     display: none;
-    position: absolute;
+    position: relative;
     z-index: 10;
 }
 
-#winning h1 {
-    text-align: center;
+#winning img {
+    position: absolute;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 @keyframes stretch {
