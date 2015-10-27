@@ -69,12 +69,6 @@ function card_clicked(card_container_element) {
             if (match_counter == total_possible_matches) {
                 console.log("You won!");
                 $('div#pop-up>a').click(win());
-                //winning();
-                //alert("You Won!");
-                //$('.winning-div').css("display", "block");
-                //setTimeout(function() {reset_cards(); }, 5000);
-                //$('.winning-div').css("display", "none");
-
             }
         }
         else {
@@ -222,61 +216,7 @@ function winHide() {
 }
 
 /*
-
-
-function quoteModal() {
-    $('#openModal_quote').modal();
-}
-/*
- <a href="#openModal_quote">Quote</a>
- </button>
- <div id="openModal_quote" class="modalDialog">
- <div>
- <a href="#close" title="Close" class="close">X</a>
- <h2>This Candidate Said...</h2>
- <p>speech bubble here</p>
- <p>"Insert Silly Quote Here"</p>
- </div>
- */
-/*function popUp() {
- var popup = $("<div>", {
- id: "my_popup"
- });
-
- var img = $("<img>", {
- src: "http://chattertainment.com/wp-content/uploads/2014/03/cartoon-speech-bubble-hi.png",
- class: "bubble"
- });
-
- var candidate = $("<div>", {
- class: "candidate-pic"
- });
-
- var message = $("<p>", {
- text: "This is the quote text",
- class: "quote-text"
- });
-
- popup.append(img, message, candidate);
-
- $('.game-area').append(popup);
- }
- */
-
-
-
-/*var winning = $('<h1>', {
-    id: 'winning',
-    text: 'You Won!'
-});
-
-function win() {
-    $(winning).css('display', 'block');
-    $(body_container).append(winning);
-}
-
-*/
-/* ATTEMPT TO RANDOMIZE
+ATTEMPT TO RANDOMIZE
 var backcard = 'images/2016.png';
 
  var frontcard = [];
@@ -294,7 +234,9 @@ var backcard = 'images/2016.png';
  frontcard[11] = 'images/huckabee.jpg';
 
  var numOfMatches = 0.5* frontcard.length;
- var tid; */
+ var tid;
+ */
+
 
 /*
 

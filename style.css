@@ -226,10 +226,11 @@ nav a:hover {
 
 /*game area formatting*/
 .game-area {
-    width: auto;
+    width: 92%;
     position: relative;
     align-content: center;
     display: block;
+    float: right;
 }
 
 /*reset button*/
@@ -276,9 +277,9 @@ nav a:hover {
     text-align: center;
 }
 
-/*.reset-button {
-    display: none;
-} */
+.reset {
+    margin: auto;
+}
 
 .label {
     display: block;
