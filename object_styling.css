@@ -1,0 +1,31 @@
+body {
+    background-color: #e1e8f0;
+}
+
+.welcome {
+font-family: 'Cinzel', serif;
+}
+
+.preference_container {
+    border: 1px solid black;
+    background-color: #6ed3cf;
+    color: white;
+}
+
+.disney_button {
+    font-family: 'Tangerine', cursive;
+    color: white;
+}
+
+.btn.disney_button {
+    background: #9068be;
+}
+
+.candidates_button {
+    font-family: 'Cinzel', serif;
+    color: white;
+}
+
+.btn.candidates_button {
+    background: #e62739;
+}

@@ -1,34 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <!--<link href='https://fonts.googleapis.com/css?family=Lobster|Cardo:400,400italic&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'> -->
     <title>Memory Match</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-          crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
-          integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
-            integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
-            crossorigin="anonymous"></script>
-    <script src="object_oriented.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Cinzel|Tangerine' rel='stylesheet' type='text/css'>
-    <!--<link rel="stylesheet" href="style.css" type="text/css">-->
-    <link rel="stylesheet" href="object_styling.css" type="text/css">
-
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!--<script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script> -->
+    <script src="memory_game.js"></script>
 
 </head>
 <body>
-
-<!--
 <div class="buttons-container">
     <button type="button" name="instructions" class="button" id="button_instructions" onclick="instructions()">
         <a href="#openModal">Instructions</a>
@@ -48,8 +31,8 @@
         </div>
     </div>
     <button type="button" name="startgame" class="button" id="button_playgame" onclick="startGame()">Play Game</button>
-</div> -->
-<!--
+</div>
+
 <div id="pop-up">
     <div>
         <a href="#close" title="Close" class="close" onclick="popUpHide()">X</a>
@@ -65,96 +48,96 @@
 <button class="reset" style="display:none" onclick="reset_cards();">Reset Game</button>
 
 
-        <div class="row"> -->
+        <div class="row">
             <!--plan: make the quote cards have the first few words of the quote. When you click on
             the quote, a modal pops up with the full quote. When the cards are matched, a youtube clip
             with the quote appears -->
-            <!--<div class="trump card" onclick="card_clicked(this);">-->
-                <!--<div class="front"><img src="images/trump.jpg"></div>-->
-                <!--<div class="back" card_src="trump"><img src="images/2016.png"></div>-->
-            <!--</div>-->
-            <!--<div class="trump card" onclick="card_clicked(this);">-->
-                <!--<div class="front"><img src="images/trump.jpg"></div>-->
-                <!--<div class="back" card_src="trump"><img src="images/2016.png"></div>-->
-            <!--</div>-->
+            <div class="trump card" onclick="card_clicked(this);">
+                <div class="front"><img src="images/trump.jpg"></div>
+                <div class="back" card_src="trump"><img src="images/2016.png"></div>
+            </div>
+            <div class="trump card" onclick="card_clicked(this);">
+                <div class="front"><img src="images/trump.jpg"></div>
+                <div class="back" card_src="trump"><img src="images/2016.png"></div>
+            </div>
 
-            <!--<div class="clinton card" onclick="card_clicked(this);">-->
-                <!--<div class="front"><img src="images/clinton.jpg"></div>-->
-                <!--<div class="back" card_src="clinton"><img src="images/2016.png"></div>-->
-            <!--</div>-->
-            <!--<div class="clinton card" onclick="card_clicked(this);">-->
-                <!--<div class="front"><img src="images/clinton.jpg"></div>-->
-                <!--<div class="back" card_src="clinton"><img src="images/2016.png"></div>-->
-            <!--</div>-->
-            <!--<div class="rubio card" onclick="card_clicked(this);">-->
-                <!--<div class="front"><img src="images/rubio.jpg"></div>-->
-                <!--<div class="back" card_src="rubio"><img src="images/2016.png"></div>-->
-            <!--</div>-->
-            <!--<div class="rubio card" onclick="card_clicked(this);">-->
-                <!--<div class="front"><img src="images/rubio.jpg"></div>-->
-                <!--<div class="back" card_src="rubio"><img src="images/2016.png"></div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-            <!--<div class="bush card" onclick="card_clicked(this);">-->
-                <!--<div class="front"><img src="images/bush.jpg"></div>-->
-                <!--<div class="back" card_src="bush"><img src="images/2016.png"></div>-->
-            <!--</div>-->
-            <!--<div class="bush card" onclick="card_clicked(this);">-->
-                <!--<div class="front"><img src="images/bush.jpg"></div>-->
-                <!--<div class="back" card_src="bush"><img src="images/2016.png"></div>-->
-            <!--</div>-->
-            <!--<div class="sanders card" onclick="card_clicked(this);">-->
-                <!--<div class="front"><img src="images/sanders.jpg"></div>-->
-                <!--<div class="back" card_src="sanders"><img src="images/2016.png"></div>-->
-            <!--</div>-->
-            <!--<div class="sanders card" onclick="card_clicked(this);">-->
-                <!--<div class="front"><img src="images/sanders.jpg"></div>-->
-                <!--<div class="back" card_src="sanders"><img src="images/2016.png"></div>-->
-            <!--</div>-->
-            <!--<div class="carson card" onclick="card_clicked(this);">-->
-                <!--<div class="front"><img src="images/carson.jpg"></div>-->
-                <!--<div class="back" card_src="carson"><img src="images/2016.png"></div>-->
-            <!--</div>-->
-            <!--<div class="carson card" onclick="card_clicked(this);">-->
-                <!--<div class="front"><img src="images/carson.jpg"></div>-->
-                <!--<div class="back" card_src="carson"><img src="images/2016.png"></div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="fiorina card" onclick="card_clicked(this);">-->
-                    <!--<div class="front"><img src="images/fiorina.jpg"></div>-->
-                    <!--<div class="back" card_src="fiorina"><img src="images/2016.png"></div>-->
-                <!--</div>-->
-                <!--<div class="fiorina card" onclick="card_clicked(this);">-->
-                    <!--<div class="front"><img src="images/fiorina.jpg"></div>-->
-                    <!--<div class="back" card_src="fiorina"><img src="images/2016.png"></div>-->
-                <!--</div>-->
-                <!--<div class="cruz card" onclick="card_clicked(this);">-->
-                    <!--<div class="front"><img src="images/cruz.jpg"></div>-->
-                    <!--<div class="back" card_src="cruz"><img src="images/2016.png"></div>-->
-                <!--</div>-->
-                <!--<div class="cruz card" onclick="card_clicked(this);">-->
-                    <!--<div class="front"><img src="images/cruz.jpg"></div>-->
-                    <!--<div class="back" card_src="cruz"><img src="images/2016.png"></div>-->
-                <!--</div>-->
-                <!--<div class="huckabee card" onclick="card_clicked(this);">-->
-                    <!--<div class="front"><img src="images/huckabee.jpg"></div>-->
-                    <!--<div class="back" card_src="huckabee"><img src="images/2016.png"></div>-->
-                <!--</div>-->
-                <!--<div class="huckabee card" onclick="card_clicked(this);">-->
-                    <!--<div class="front"><img src="images/huckabee.jpg"></div>-->
-                    <!--<div class="back" card_src="huckabee"><img src="images/2016.png"></div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-<!--<footer>-->
-    <!--<nav>-->
-        <!--<ul>-->
-            <!--<li><a href="#">Settings</a></li>-->
-            <!--<li><a href="about.html">About</a></li>-->
-            <!--<li><a href="#">Quotes Explained</a></li>-->
-        <!--</ul>-->
-    <!--</nav>-->
-<!--</footer>-->
+            <div class="clinton card" onclick="card_clicked(this);">
+                <div class="front"><img src="images/clinton.jpg"></div>
+                <div class="back" card_src="clinton"><img src="images/2016.png"></div>
+            </div>
+            <div class="clinton card" onclick="card_clicked(this);">
+                <div class="front"><img src="images/clinton.jpg"></div>
+                <div class="back" card_src="clinton"><img src="images/2016.png"></div>
+            </div>
+            <div class="rubio card" onclick="card_clicked(this);">
+                <div class="front"><img src="images/rubio.jpg"></div>
+                <div class="back" card_src="rubio"><img src="images/2016.png"></div>
+            </div>
+            <div class="rubio card" onclick="card_clicked(this);">
+                <div class="front"><img src="images/rubio.jpg"></div>
+                <div class="back" card_src="rubio"><img src="images/2016.png"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="bush card" onclick="card_clicked(this);">
+                <div class="front"><img src="images/bush.jpg"></div>
+                <div class="back" card_src="bush"><img src="images/2016.png"></div>
+            </div>
+            <div class="bush card" onclick="card_clicked(this);">
+                <div class="front"><img src="images/bush.jpg"></div>
+                <div class="back" card_src="bush"><img src="images/2016.png"></div>
+            </div>
+            <div class="sanders card" onclick="card_clicked(this);">
+                <div class="front"><img src="images/sanders.jpg"></div>
+                <div class="back" card_src="sanders"><img src="images/2016.png"></div>
+            </div>
+            <div class="sanders card" onclick="card_clicked(this);">
+                <div class="front"><img src="images/sanders.jpg"></div>
+                <div class="back" card_src="sanders"><img src="images/2016.png"></div>
+            </div>
+            <div class="carson card" onclick="card_clicked(this);">
+                <div class="front"><img src="images/carson.jpg"></div>
+                <div class="back" card_src="carson"><img src="images/2016.png"></div>
+            </div>
+            <div class="carson card" onclick="card_clicked(this);">
+                <div class="front"><img src="images/carson.jpg"></div>
+                <div class="back" card_src="carson"><img src="images/2016.png"></div>
+            </div>
+            <div class="row">
+                <div class="fiorina card" onclick="card_clicked(this);">
+                    <div class="front"><img src="images/fiorina.jpg"></div>
+                    <div class="back" card_src="fiorina"><img src="images/2016.png"></div>
+                </div>
+                <div class="fiorina card" onclick="card_clicked(this);">
+                    <div class="front"><img src="images/fiorina.jpg"></div>
+                    <div class="back" card_src="fiorina"><img src="images/2016.png"></div>
+                </div>
+                <div class="cruz card" onclick="card_clicked(this);">
+                    <div class="front"><img src="images/cruz.jpg"></div>
+                    <div class="back" card_src="cruz"><img src="images/2016.png"></div>
+                </div>
+                <div class="cruz card" onclick="card_clicked(this);">
+                    <div class="front"><img src="images/cruz.jpg"></div>
+                    <div class="back" card_src="cruz"><img src="images/2016.png"></div>
+                </div>
+                <div class="huckabee card" onclick="card_clicked(this);">
+                    <div class="front"><img src="images/huckabee.jpg"></div>
+                    <div class="back" card_src="huckabee"><img src="images/2016.png"></div>
+                </div>
+                <div class="huckabee card" onclick="card_clicked(this);">
+                    <div class="front"><img src="images/huckabee.jpg"></div>
+                    <div class="back" card_src="huckabee"><img src="images/2016.png"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+    <nav>
+        <ul>
+            <li><a href="#">Settings</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Quotes Explained</a></li>
+        </ul>
+    </nav>
+</footer>
     </body>
 </html>
