@@ -93,7 +93,7 @@ function createBoard() {
 }
 
 
-function board(theme) {
+function Board(theme) {
     console.log('board has been called');
     var self = this;
     self.$el = $('#board');
