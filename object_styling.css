@@ -1,0 +1,22 @@
+.gameboard_container {
+    width: 90vw;
+    margin-left: 5%;
+    border: 2px solid black;
+
+}
+
+.row_cards {
+    border: 1px solid black;
+}
+
+.card {
+    background-color: pink;
+    min-height: 50px;
+    height: auto;
+    min-width: 100px;
+    width: auto;
+    border: 1px solid red;
+    display: inline-block;
+    position: relative;
+    margin: 3% 3%;
+}
