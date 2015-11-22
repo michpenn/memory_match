@@ -7,7 +7,7 @@ var iPhone;
 var iPad;
 
 //setting preferences before generating the game board
-//STEP 1
+//STEP 2
 function selectTheme() {
     var theme_container = $('<div>', {
         class: 'theme_container container'
@@ -71,7 +71,7 @@ function selectTheme() {
 
     })
 }
-//STEP2
+//STEP3
 function selectLevel() {
     $('.theme_container').remove();
     $('.welcome').remove();
@@ -114,12 +114,13 @@ function selectLevel() {
     $('.level_button').click(function () {
         gameLevel = ($(this).attr('level'));
         console.log(gameLevel);
+        clearScreen();
         //TODO clear level selection and load game board and card
         //TODO also make a warning about the different versions
     });
 }
 
-//Step 3: check device type
+//Step 1: check device type
 function checkDevise() {
     if(navigator.userAgent.search("iPhone") >= 0) {
         console.log('version iPhone');
@@ -134,7 +135,14 @@ function checkDevise() {
     }
 }
 
-//Step 4: generate game board
+//Step 4: clear screen to generate game board
+function clearScreen() {
+    $('.level_container').addClass('remove_level_container');
+    setTimeout(function(){
+        $('.level_container').remove();
+    },1024)
+}
+
 
 
 $(document).ready(function () {

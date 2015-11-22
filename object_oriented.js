@@ -223,25 +223,6 @@ Card.prototype.getHTML = function(count) {
 
 
 
-//basic card creators, to be further built on
-function makeCards() {
-    for (var i = 0; i < numberOfRows; i++) {
-        console.log('this row starts here: ' + i);
-        var row = $('<div>', {
-            class: 'row row_cards'
-        });
-        for (var j = 0; j < numberOfColumns; j++) {
-            console.log('card number:' + j);
-            var card = $('<div>', {
-                class: 'card'
-            });
-            $(row).append(card);
-        }
-        $('.gameboard_container').append(row);
-    }
-}
-
-
 $(document).ready(function () {
     console.log('ready to load');
     createBoard();

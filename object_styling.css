@@ -164,6 +164,39 @@ Animations
     }
 }
 
+.remove_level_container {
+    -webkit-animation: removeLevelsContainer 1.0023s 1 ease-out;
+    -moz-animation: removeLevelsContainer 1.0023s 1 ease-out;
+    -o-animation: removeLevelsContainer 1.0023s 1 ease-out;
+}
+
+@-webkit-keyframes removeLevelsContainer {
+    from {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(0px);
+    }
+    to {
+        -webkit-transform: rotate(0deg) scale(0) skew(-91deg) translate(-300px);
+    }
+}
+
+@-moz-keyframes removeLevelsContainer {
+    from {
+        -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(0px);
+    }
+    to {
+        -moz-transform: rotate(0deg) scale(0) skew(-91deg) translate(-300px);
+    }
+}
+
+@-o-keyframes removeLevels {
+    from {
+        -o-transform: rotate(0deg) scale(1) skew(1deg) translate(0px);
+    }
+    to {
+        -o-transform: rotate(0deg) scale(0) skew(-91deg) translate(-300px);
+    }
+}
+
 /* Hide elements */
 
 .hide_this {
@@ -180,7 +213,7 @@ Theme specifications
 }
 
 .disney_ipad_background {
-background-image: url(themes/disney/backgrounds/disney_background1.jpg);
+    background-image: url(themes/disney/backgrounds/disney_background1.jpg);
     background-repeat: no-repeat;
     background-position: 25% 20%;
 }
@@ -208,13 +241,14 @@ background-image: url(themes/disney/backgrounds/disney_background1.jpg);
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width:768px) {
-/*
-Part 1- Setting Preferences
-*/
+@media (min-width: 768px) {
+    /*
+    Part 1- Setting Preferences
+    */
     #preferences_container {
         margin-top: 5vh;
     }
+
     .level_button {
         font-size: 1.2em;
     }
@@ -222,13 +256,14 @@ Part 1- Setting Preferences
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-/*
-Part 1 - setting the preferences
-*/
+    /*
+    Part 1 - setting the preferences
+    */
     #preferences_container {
         height: 60vh;
         width: 90vw;
     }
+
     .theme_container {
         padding-top: 5%;
         padding-bottom: 15%;
