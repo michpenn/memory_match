@@ -140,7 +140,23 @@ function clearScreen() {
     $('.level_container').addClass('remove_level_container');
     setTimeout(function(){
         $('.level_container').remove();
-    },1024)
+        $('#preferences_container').remove();
+        $('.row').remove();
+    },1024);
+    makeBoard();
+}
+
+//Step 5: make game board
+function makeBoard() {
+    var theBoard = $('<div>', {
+        class: 'col-xs-8 board_container'
+
+    });
+    var statsContainer = $('<div>', {
+        class: 'col-xs-3 stats_container'
+
+    });
+    $('.game-container').append(statsContainer, theBoard);
 }
 
 

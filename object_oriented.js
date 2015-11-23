@@ -51,27 +51,25 @@ var THEMES = {
     }
 };
 
-function randomize(matches) {
-    var randomNumber;
-    if (randomizedNumbers.length < matches) {
-        console.log('we can push numbers to the array');
-        for (var i = 0; i < matches;) {
-            randomNumber = Math.floor((Math.random() * matches) + 1);
-            if (randomizedNumbers.length === 0) {
-                randomizedNumbers.push(randomNumber);
-                i++;
-            }
-            else {
-                if ($.inArray(randomNumber, randomizedNumbers) == -1) {
-                    randomizedNumbers.push(randomNumber);
-                    i++;
-                }
-            }
-        }
-
-    }
-    console.log('the final array: ' + randomizedNumbers);
+function createBoard() {
+    console.log('create board has been called');
+    $('.level').click(function () {
+        level = $(this).attr('level');
+        console.log('level is set to: ' + level);
+        numberOfColumns = 6;
+        numberOfRows = 3;
+    });
+    $('.theme').click(function () {
+        theme = $(this).attr('theme');
+        console.log('theme is set to: ' + theme);
+    });
+    var board = new Board('presidents');
+    board.drawCards();
+    $('.card').on('click', function () {
+        board.cardClick($(this));
+    });
 }
+
 
 function createBoard() {
     console.log('create board has been called');
@@ -85,6 +83,7 @@ function createBoard() {
         theme = $(this).attr('theme');
         console.log('theme is set to: ' + theme);
     });
+
     var board = new Board('presidents');
     board.drawCards();
     $('.card').on('click', function () {
@@ -121,6 +120,8 @@ function Board(theme) {
     self.card1 = null;
     self.card2 = null;
 }
+
+
 Board.prototype.cardClick = function ($card) {
     var self = this;
     $card.find('.back').hide();
@@ -129,15 +130,22 @@ Board.prototype.cardClick = function ($card) {
     }
     else {
         self.card2 = {id: $card.attr('id'), count: $card.attr('data-count')};
-        self.checkMatch(self.card1, self.card2);
+        setTimeout(function(){
+            self.checkMatch(self.card1, self.card2);
+        },2000)
+
     }
 
 };
+
+
 Board.prototype.checkMatch = function (card1, card2) {
     var self = this;
     if (card1.id == card2.id) {
         if (card1.count != card2.count) {
             self.matchFound(card1, card2);
+            self.card1 = null;
+            self.card2 = null;
         }
         else {
             self.card2 == null;
@@ -145,18 +153,22 @@ Board.prototype.checkMatch = function (card1, card2) {
     }
     else {
         // reset
-        self.matchNotFound();
+        self.matchNotFound(card1, card2);
     }
 };
+
 Board.prototype.matchFound = function (card1, card2) {
-    alert('match');
+    console.log('match');
+    console.log(card1, card2);
 };
+
 Board.prototype.$getCard = function (card) {
-    return $('#' + self.card.id + '[data-count="' + self.card.count + '"]');
+    return $('#' + card.id + '[data-count="' + card.count + '"]');
 };
 
 Board.prototype.matchNotFound = function (card1, card2) {
-    alert('not a match');
+    var self = this;
+    console.log('not a match');
     self.$getCard(card1).find('.back').show();
     self.$getCard(card2).find('.back').show();
     self.card1 = null;
@@ -192,7 +204,6 @@ Board.prototype.drawCards = function () {
     self.$el.html(self.$cardsContainer.html());
 };
 
-
 function Card(id, count, frontImage, backImage) {
     var self = this;
     self.id = id;
@@ -201,26 +212,25 @@ function Card(id, count, frontImage, backImage) {
     self.$el = $(self.getHTML(count));
 }
 
-Card.prototype.getFront = function() {
+Card.prototype.getFront = function () {
     var self = this;
-    return '<div class="front"><img src="'+ self.frontImage +'"></div>';
+    return '<div class="front"><img src="' + self.frontImage + '"></div>';
 };
 
-Card.prototype.getBack = function() {
+Card.prototype.getBack = function () {
     var self = this;
-    return '<div class="back"><img src="'+ self.backImage +'"></div>';
+    return '<div class="back"><img src="' + self.backImage + '"></div>';
 };
 
-Card.prototype.getHTML = function(count) {
+Card.prototype.getHTML = function (count) {
     var self = this;
-    var html = ''+
-        '<div class="card" id="'+ self.id +'" data-count="'+count+'">'+
+    var html = '' +
+        '<div class="card" id="' + self.id + '" data-count="' + count + '">' +
         self.getFront() +
         self.getBack() +
         '</div>';
     return html;
 };
-
 
 
 $(document).ready(function () {

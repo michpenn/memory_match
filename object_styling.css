@@ -254,6 +254,25 @@ Theme specifications
     }
 }
 
+/*
+Loading game
+*/
+
+.game-container {
+    height: 80vh;
+    width: 100vw;
+}
+
+.board_container {
+    border: 1px solid pink;
+    height: 60vh;
+}
+
+.stats_container {
+    border: 1px solid purple;
+    height: 20vh;
+}
+
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     /*
