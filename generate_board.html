@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
+          integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+            integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+            crossorigin="anonymous"></script>
+    <style>
+        .stats-container {
+        }
+
+        #games_played {
+            margin-left: 30px;
+        }
+
+        .board-area {
+            border: 1px solid black;
+            height: 150px;
+            margin-top: 5%;
+        }
+
+        .stats-container-desktop {
+            width: 13%;
+            height: 15vh;
+            position: relative;
+            display: inline-block;
+        }
+
+        .stats-container {
+            position: relative;
+            top: -250%;
+        }
+
+        .stats_label_desktop {
+            list-style-type: none;
+            text-align: left;
+            margin-top: 3%;
+        }
+
+        .board-area-desktop {
+            width: 80%;
+            height: 85vh;
+            border: 1px solid pink;
+            position: relative;
+            left: 2%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="game_container container-fluid">
+    <div class="row">
+    <ul class="stats-container list-group list-inline hidden-md hidden-lg">
+        <li class="list-group-item col-xs-3 col-md-2" id="games_played">Games Played: <span class="badge">0</span></li>
+        <li class="list-group-item col-xs-3">Attempts: <span class="badge">0</span></li>
+        <li class="list-group-item col-xs-3">Accuracy: <span class="badge">0</span></li>
+        <li><button class="list-group-item col-xs-2 col-xs-offset-1">Reset</button></li>
+    </ul>
+    </div>
+    <div class="row hidden-md hidden-lg">
+        <div class="col-xs-1 board-area"></div>
+    </div>
+    </div>
+<div class="game_container container-fluid">
+    <div class="row hidden-xs hidden-sm">
+        <aside class="stats-container-desktop">
+            <ul class="stats-container">
+                <li class="stats_label_desktop">Games Played: <span class="badge">0</span></li>
+                <li class="stats_label_desktop">Attempts: <span class="badge">0</span></li>
+                <li class="stats_label_desktop">Accuracy: <span class="badge">0</span></li>
+            </ul>
+        </aside>
+        <div class="board-area-desktop"></div>
+    </div>
+</div>
+</body>
+</html>

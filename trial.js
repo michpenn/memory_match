@@ -5,6 +5,7 @@ var gameTheme;
 var gameLevel;
 var iPhone;
 var iPad;
+var desktop;
 
 //setting preferences before generating the game board
 //STEP 2
@@ -42,27 +43,27 @@ function selectTheme() {
     $('#preferences_container').append(theme_container);
     $('.theme_button').click(function () {
         gameTheme = ($(this).attr('theme'));
-        if(gameTheme == 'disney'){
-            if(iPhone == true) {
+        if (gameTheme == 'disney') {
+            if (iPhone == true) {
                 $('body').addClass('disney_phone_background');
             }
             else if (iPad == true) {
                 $('body').addClass('disney_ipad_background');
             }
 
-            else{
+            else {
                 $('body').addClass('disney_background');
             }
         }
-        else if(gameTheme == 'candidates'){
+        else if (gameTheme == 'candidates') {
             console.log('set candidate background');
-            if(iPhone == true) {
+            if (iPhone == true) {
                 $('body').addClass('candidate_iphone_background');
             }
             else if (iPad == true) {
                 $('body').addClass('candidate_ipad_background');
             }
-            else{
+            else {
                 $('body').addClass('candidate_background');
             }
         }
@@ -108,7 +109,7 @@ function selectLevel() {
         text: 'Hard'
     });
 
-    $(button_container).append(easy, medium,hard);
+    $(button_container).append(easy, medium, hard);
     $(level_container).append(level_heading, button_container);
     $('#preferences_container').append(level_container);
     $('.level_button').click(function () {
@@ -122,43 +123,95 @@ function selectLevel() {
 
 //Step 1: check device type
 function checkDevise() {
-    if(navigator.userAgent.search("iPhone") >= 0) {
+    if (navigator.userAgent.search("iPhone") >= 0) {
         console.log('version iPhone');
         iPhone = true;
     }
-    if(navigator.userAgent.search("iPad") >= 0) {
+    if (navigator.userAgent.search("iPad") >= 0) {
         console.log('version iPad');
         iPad = true;
     }
     else {
         console.log(navigator.userAgent);
+        desktop = true;
     }
 }
 
 //Step 4: clear screen to generate game board
 function clearScreen() {
     $('.level_container').addClass('remove_level_container');
-    setTimeout(function(){
+    setTimeout(function () {
         $('.level_container').remove();
         $('#preferences_container').remove();
         $('.row').remove();
-    },1024);
-    makeBoard();
+    }, 1024);
+    setTimeout(function() {
+        makeBoard();
+    }, 1030);
+
 }
 
 //Step 5: make game board
 function makeBoard() {
-    var theBoard = $('<div>', {
-        class: 'col-xs-8 board_container'
+    var gameRow;
+    var theBoard;
+    var statsContainer;
+    var label_gamesPlayed;
+    var label_attempts;
+    var label_accuracy;
+    var button_reset;
 
-    });
-    var statsContainer = $('<div>', {
-        class: 'col-xs-3 stats_container'
+    if ((iPhone) || (iPad)) {
+        var statsRow = $('<div>', {
+            class: 'row'
+        });
 
-    });
-    $('.game-container').append(statsContainer, theBoard);
+        statsContainer = $('<ul>', {
+            class: 'stats-container list-group list-inline hidden-md hidden-lg'
+        });
+
+        label_gamesPlayed = $('<li>', {
+           class: 'list-group-item col-xs-3',
+            id: 'games_played',
+            html: 'Games Played: ' + '<span class="badge">0</span>'
+        });
+
+        label_attempts =$('<li>', {
+            class: 'list-group-item col-xs-3',
+            html: 'Attempts: ' + '<span class="badge">0</span></li>'
+        });
+
+        label_accuracy=$('<li>', {
+            class: 'list-group-item col-xs-3',
+            html: 'Accuracy: ' + '<span class="badge">0</span></li>'
+        });
+
+        button_reset = $('<li>', {
+            class: 'col-xs-2',
+            html: '<button class="list-group-item">Reset</button>'
+        });
+
+        gameRow = $('<div>', {
+            class: 'row'
+        });
+        theBoard = $('<div>', {
+            class: 'col-xs-12 board-area'
+        });
+
+        $(statsContainer).append(label_gamesPlayed, label_attempts, label_accuracy, button_reset);
+        $(statsRow).append(statsContainer);
+        $(gameRow).append(theBoard);
+        $('.game-container').append(statsRow, gameRow);
+    }
+
+    else if ((desktop)) {
+
+    }
+
+    if (iPhone) {
+        alert('This game was not designed for smart phones. It may not appear in an asthetically appeasing way on your phone');
+    }
 }
-
 
 
 $(document).ready(function () {

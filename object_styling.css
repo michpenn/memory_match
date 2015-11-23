@@ -273,6 +273,49 @@ Loading game
     height: 20vh;
 }
 
+/*
+Board Styling
+*/
+
+#games_played {
+    margin-left: 30px;
+}
+
+.board-area {
+    border: 1px solid black;
+    height: 150px;
+    margin-top: 5%;
+}
+
+.stats-container-desktop {
+    width: 13%;
+    height: 15vh;
+    position: relative;
+    display: inline-block;
+}
+
+.stats-container {
+    position: relative;
+    top: -250%;
+}
+
+.stats_label_desktop {
+    list-style-type: none;
+    text-align: left;
+    margin-top: 3%;
+}
+
+.board-area-desktop {
+    width: 80%;
+    height: 85vh;
+    border: 1px solid pink;
+    position: relative;
+    left: 2%;
+    display: inline-block;
+}
+
+
+
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     /*

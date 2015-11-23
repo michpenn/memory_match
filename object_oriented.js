@@ -1,7 +1,6 @@
 /**
  * Created by michpenn on 11/13/15.
  */
-var randomizedNumbers = [];
 var level;
 var theme;
 var cards = [];
@@ -50,25 +49,6 @@ var THEMES = {
         ]
     }
 };
-
-function createBoard() {
-    console.log('create board has been called');
-    $('.level').click(function () {
-        level = $(this).attr('level');
-        console.log('level is set to: ' + level);
-        numberOfColumns = 6;
-        numberOfRows = 3;
-    });
-    $('.theme').click(function () {
-        theme = $(this).attr('theme');
-        console.log('theme is set to: ' + theme);
-    });
-    var board = new Board('presidents');
-    board.drawCards();
-    $('.card').on('click', function () {
-        board.cardClick($(this));
-    });
-}
 
 
 function createBoard() {
@@ -119,6 +99,7 @@ function Board(theme) {
     self.theme = theme;
     self.card1 = null;
     self.card2 = null;
+
 }
 
 
