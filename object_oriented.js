@@ -155,6 +155,7 @@ Board.prototype.checkMatch = function (card1, card2) {
 
 Board.prototype.matchFound = function (card1, card2) {
     console.log('match');
+    //TODO UP MATCH COUNT HERE
     console.log(card1, card2);
 };
 
