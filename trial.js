@@ -205,6 +205,42 @@ function makeBoard() {
     }
 
     else if ((desktop)) {
+        gameRow = $('<div>', {
+            class: 'row'
+        });
+
+        var statsContainerAside = $('<aside>', {
+            class: 'stats-container-desktop'
+        });
+
+        statsContainer = $('<ul>', {
+            class: 'stats-container'
+        });
+
+        label_gamesPlayed = $('<li>', {
+            class: 'stats_label_desktop games_played',
+            html: 'Games Played: ' + '<span class="badge">0</span>'
+        });
+
+        label_attempts = $('<li>', {
+            class: 'stats_label_desktop attempts',
+            html: 'Attempts: ' + '<span class="badge">0</span>'
+        });
+
+        label_accuracy = $('<li>', {
+            class: 'stats_label_desktop accuracy',
+            html: 'Accuracy: ' + '<span class="badge">0</span>'
+        });
+
+        theBoard = $('<div>', {
+            class: "board-area-desktop"
+        });
+
+
+        $(statsContainer).append(label_gamesPlayed, label_attempts, label_accuracy);
+        $(statsContainerAside).append(statsContainer);
+        $(gameRow).append(statsContainerAside, theBoard);
+        $('.game-container').append(gameRow);
 
     }
 

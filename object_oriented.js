@@ -78,7 +78,6 @@ function Board(theme) {
     self.$el = $('#board');
     self.$cardsContainer = $('<div id="cards"></div>');
     self.cards = [];
-
     self.level = level;
     if (self.level == 'easy') {
         self.number_of_matches = 9;
@@ -99,6 +98,22 @@ function Board(theme) {
     self.theme = theme;
     self.card1 = null;
     self.card2 = null;
+    //Stats
+    self.accuracy= 0;
+    self.stats = {
+        games_played: 0,
+        attempts: 0,
+        matches: 0
+    };
+    self.get_accuracy = function(){
+        console.log(self.accuracy);
+        return self.accuracy;
+    };
+    self.calculate_accuracy = function(){
+        var accuracy = self.stats.matches/self.stats.attempts;
+        accuracy = accuracy.toPrecision(3);
+        return self.accuracy = accuracy;
+    };
 
 }
 
@@ -185,6 +200,9 @@ Board.prototype.drawCards = function () {
     self.$el.html(self.$cardsContainer.html());
 };
 
+//Prototyping stats calculations
+
+
 function Card(id, count, frontImage, backImage) {
     var self = this;
     self.id = id;
@@ -211,6 +229,20 @@ Card.prototype.getHTML = function (count) {
         self.getBack() +
         '</div>';
     return html;
+};
+
+function stats_template(stats_container, game){
+    var self=this;
+    self.stats_container = $(stats_container);
+    self.game=game;
+    self.gamesPlayed_text = self.stats_container.find('.games_played > span');
+    self.attempts_text = self.stats_container.find('.attempts > span');
+    self.accuracy_text = self.stats_container.find('.accuracy > span');
+    self.init = function(){
+        self.update_stats();
+    };
+    //self.update_stats = function(){}
+
 };
 
 
