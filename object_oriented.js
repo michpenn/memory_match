@@ -137,6 +137,7 @@ Board.prototype.cardClick = function ($card) {
 
 Board.prototype.checkMatch = function (card1, card2) {
     var self = this;
+    //switch to class
     if (card1.id == card2.id) {
         if (card1.count != card2.count) {
             self.matchFound(card1, card2);
