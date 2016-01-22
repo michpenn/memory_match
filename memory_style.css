@@ -1,0 +1,321 @@
+/*
+CSS Design is mobile first
+*/
+
+/*formatting for setting preferences*/
+#container_preferences {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd65e+0,febf04+100;Yellow+3D+%232 */
+    background: #ffd65e; /* Old browsers */
+    background: -moz-linear-gradient(left, #ffd65e 0%, #febf04 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #ffd65e 0%, #febf04 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #ffd65e 0%, #febf04 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd65e', endColorstr='#febf04', GradientType=1); /* IE6-9 */
+    height: 100vh;
+}
+
+/*formatting for setting preferences text*/
+.welcome {
+    font-family: 'Cinzel', serif;
+    text-shadow: 1px 2px 1px #000000;
+}
+
+/*formatting for setting preferences buttons*/
+.btn-primary.gradient {
+    background: -moz-linear-gradient(top, #33a6cc 50%, #0099cc 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #33a6cc), color-stop(50%, #0099cc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #33a6cc 50%, #0099cc 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #33a6cc 50%, #0099cc 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #33a6cc 50%, #0099cc 50%); /* IE10+ */
+    background: linear-gradient(to bottom, #33a6cc 50%, #0099cc 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33a6cc', endColorstr='#0099cc', GradientType=0); /* IE6-9 */
+}
+
+.btn-primary.gradient:hover, .btn-primary.gradient:focus, .btn-primary.gradient:active, .btn-primary.gradient.active, .open > .dropdown-toggle.btn-primary {
+    background: -moz-linear-gradient(top, #66b2cc 50%, #33a6cc 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #66b2cc), color-stop(50%, #33a6cc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #66b2cc 50%, #33a6cc 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #66b2cc 50%, #33a6cc 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #66b2cc 50%, #33a6cc 50%); /* IE10+ */
+    background: linear-gradient(to bottom, #66b2cc 50%, #33a6cc 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#66b2cc', endColorstr='#33a6cc', GradientType=0); /* IE6-9 */
+}
+
+.btn-primary.gradient:active, .btn-primary.gradient.active {
+    background: -moz-linear-gradient(top, #267c99 50%, #007299 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #267c99), color-stop(50%, #007299)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #267c99 50%, #007299 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #267c99 50%, #007299 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #267c99 50%, #007299 50%); /* IE10+ */
+    background: linear-gradient(to bottom, #267c99 50%, #007299 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#267c99', endColorstr='#007299', GradientType=0); /* IE6-9 */
+}
+
+.btn_preferences {
+    margin: 0 5%;
+}
+
+#btn_confirmPreferences {
+    margin: 5% 0;
+}
+
+.container_setPreferences {
+    -webkit-box-shadow: 10px 13px 20px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 13px 20px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 13px 20px 5px rgba(0, 0, 0, 0.75);
+    background-color: #f8f0e4;
+    padding-bottom: 5%;
+    border-radius: 5%;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.hide {
+    display: none;
+}
+
+/*Change preferences modal formatting*/
+.row_levels {
+    margin-bottom: 3%;
+}
+
+.enterPreferences {
+    -webkit-animation: enterPreferences 2s 1 ease;
+    -moz-animation: enterPreferences 2s 1 ease;
+    -o-animation: enterPreferences 2s 1 ease;
+}
+
+@-webkit-keyframes enterPreferences {
+    from {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(500px);
+    }
+    to {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+    }
+}
+
+@-moz-keyframes enterPreferences {
+    from {
+        -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(500px);
+    }
+    to {
+        -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+    }
+}
+
+@-o-keyframes enterPreferences {
+    from {
+        -o-transform: rotate(0deg) scale(1) skew(1deg) translate(500px);
+    }
+    to {
+        -o-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+    }
+}
+
+.exitPreferences {
+    -webkit-animation: exitPreferences 1s 1 ease-out;
+    -moz-animation: exitPreferences 1s 1 ease-out;
+    -o-animation: exitPreferences 1s 1 ease-out;
+}
+
+@-webkit-keyframes exitPreferences {
+    from {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+    }
+    to {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(-800px);
+    }
+}
+
+@-moz-keyframes exitPreferences {
+    from {
+        -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+    }
+    to {
+        -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(-800px);
+    }
+}
+
+@-o-keyframes exitPreferences {
+    from {
+        -o-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+    }
+    to {
+        -o-transform: rotate(0deg) scale(1) skew(1deg) translate(-800px);
+    }
+}
+
+/*backgrounds*/
+
+.background_2016 {
+    background-color: #03A9F4;
+}
+
+.background_disney {
+    background-color: hotpink;
+}
+
+.background_safari {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fff17a+0,f9d627+38,efaf37+74,ffa500+100 */
+    background: #fff17a; /* Old browsers */
+    background: -moz-linear-gradient(left,  #fff17a 0%, #f9d627 38%, #efaf37 74%, #ffa500 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #fff17a 0%,#f9d627 38%,#efaf37 74%,#ffa500 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #fff17a 0%,#f9d627 38%,#efaf37 74%,#ffa500 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff17a', endColorstr='#ffa500',GradientType=1 ); /* IE6-9 */
+
+}
+
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .welcome {
+        font-size: 40px;
+    }
+
+    .container_setPreferences {
+        height: auto;
+        width: 75%;
+        margin: 10% 0 0 13%;
+        padding-bottom: 10%;
+    }
+    .header_preference {
+        font-size: 36px;
+        margin-bottom: 8%;
+    }
+    .btn_theme, .btn_level {
+        width: 20%;
+        height: auto;
+        font-size: 2em;
+    }
+
+    #btn_changePreferences, #btn_confirmPreferences {
+        width: 25%;
+        height: auto;
+        font-size: 2em;
+    }
+
+    #confirm_theme, #confirm_level {
+        font-size: 1.5em;
+    }
+    .exitPreferences {
+        -webkit-animation: exitPreferences 1.75s 1 ease-out;
+        -moz-animation: exitPreferences 1.75s 1 ease-out;
+        -o-animation: exitPreferences 1.75s 1 ease-out;
+    }
+
+    @-webkit-keyframes exitPreferences {
+        from {
+            -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+        }
+        to {
+            -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(-1000px);
+        }
+    }
+
+    @-moz-keyframes exitPreferences {
+        from {
+            -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+        }
+        to {
+            -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(-1000px);
+        }
+    }
+
+    @-o-keyframes exitPreferences {
+        from {
+            -o-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+        }
+        to {
+            -o-transform: rotate(0deg) scale(1) skew(1deg) translate(-1000px);
+        }
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .exitPreferences {
+        -webkit-animation: exitPreferences 2s 1 ease-out;
+        -moz-animation: exitPreferences 2s 1 ease-out;
+        -o-animation: exitPreferences 2s 1 ease-out;
+    }
+
+    @-webkit-keyframes exitPreferences {
+        from {
+            -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+        }
+        to {
+            -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(-1300px);
+        }
+    }
+
+    @-moz-keyframes exitPreferences {
+        from {
+            -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+        }
+        to {
+            -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(-1300px);
+        }
+    }
+
+    @-o-keyframes exitPreferences {
+        from {
+            -o-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+        }
+        to {
+            -o-transform: rotate(0deg) scale(1) skew(1deg) translate(-1300px);
+        }
+    }
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .exitPreferences {
+        -webkit-animation: exitPreferences 4s 1 ease-out;
+        -moz-animation: exitPreferences 4s 1 ease-out;
+        -o-animation: exitPreferences 4s 1 ease-out;
+    }
+
+    @-webkit-keyframes exitPreferences {
+        from {
+            -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+        }
+        to {
+            -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(-4400px);
+        }
+    }
+
+    @-moz-keyframes exitPreferences {
+        from {
+            -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+        }
+        to {
+            -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(-4400px);
+        }
+    }
+
+    @-o-keyframes exitPreferences {
+        from {
+            -o-transform: rotate(0deg) scale(1) skew(1deg) translate(-6px);
+        }
+        to {
+            -o-transform: rotate(0deg) scale(1) skew(1deg) translate(-4400px);
+        }
+    }
+    .container_setPreferences {
+        height: auto;
+        width: 75%;
+        margin: 7% 0 0 13%;
+        padding-bottom: 10%;
+    }
+
+    #container_confirm_preferences {
+        padding-bottom: 5%;
+    }
+}

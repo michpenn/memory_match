@@ -48,6 +48,48 @@ var THEMES = {
                 front: 'themes/safari/zebra1.png'
             }
         ]
+    },
+    disney: {
+        back: 'themes/disney/disney_backcard.png',
+        images: [
+            {
+                data_cardID: 'ariel',
+                front: 'themes/disney/disney_ariel.png'
+            },
+            {
+                data_cardID: 'aurora',
+                front: 'themes/disney/disney_aurora.png'
+            },
+            {
+                data_cardID: 'belle',
+                front: 'themes/disney/disney_belle.png'
+            },
+            {
+                data_cardID: 'cindarella',
+                front: 'themes/disney/disney_cindarella.png'
+            },
+            {
+                data_cardID: 'jasmine',
+                front: 'themes/disney/disney_jasmine.png'
+            },
+            {
+                data_cardID: 'mulan',
+                front: 'themes/disney/disney_mulan.png'
+            },
+            {
+                data_cardID: 'pocahontas',
+                front: 'themes/disney/disney_pocahontas.png'
+            },
+            {
+                data_cardID: 'snowWhite',
+                front: 'themes/disney/disney_snowwhite.png'
+            },
+            {
+                data_cardID: 'tinkerbell',
+                front: 'themes/disney/disney_tinkerbell.png'
+            }
+        ]
+
     }
 };
 
@@ -178,7 +220,7 @@ Card.prototype.getHTML = function (count) {
 function createBoard(){
     numberOfColumns = 6;
     numberOfRows = 3;
-    board = new Board('safari');
+    board = new Board('disney');
     board.drawCards();
 }
 
