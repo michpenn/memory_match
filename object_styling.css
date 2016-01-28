@@ -224,19 +224,19 @@ Theme specifications
 }
 
 .candidate_background {
-    background-image: url(themes/candidates/podium_background.jpg);
+    background-image: url(themes/candidates/backgrounds/podium_background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .candidate_ipad_background {
-    background-image: url(themes/candidates/america_background_ipad.jpg);
+    background-image: url(themes/candidates/backgrounds/america_background_ipad.jpg);
     background-repeat: no-repeat;
     background-size: 768px 1024px;
 }
 
 .candidate_iphone_background {
-    background-image: url(themes/candidates/presidental_ipad_background.jpg);
+    background-image: url(themes/candidates/backgrounds/presidental_ipad_background.jpg);
     background-repeat: no-repeat;
 }
 
