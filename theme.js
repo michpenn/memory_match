@@ -1,10 +1,11 @@
 /**
  * Created by michpenn on 1/27/16.
  */
-function Theme() {
-    this.theme = theme;
+function Theme(name) {
+    this.name = name;
     this.cardBackImage = '';
     this.cardFrontImages = [];
+    this.timerIntervalAnimations;
 }
 
 Theme.prototype = {
@@ -15,7 +16,7 @@ Theme.prototype = {
     }
 };
 
-var disneyPrincesses = new Theme();
+var disneyPrincesses = new Theme('disney-princesses');
 disneyPrincesses.cardBackImage = 'themes/disney/disney_backcard.png';
 disneyPrincesses.cardFrontImages = [
     {
@@ -56,7 +57,7 @@ disneyPrincesses.cardFrontImages = [
     }
 ];
 
-var safari = new Theme();
+var safari = new Theme('safari');
 safari.cardBackImage = 'themes/safari/cardback.png';
 safari.cardFrontImages = [
     {
@@ -97,9 +98,9 @@ safari.cardFrontImages = [
     }
 ];
 
-var candidates = new Theme();
-candidates.cardBackImage = 'themes/candidates/2016.png';
-candidates.cardFrontImages = [
+var candidates2016 = new Theme('candidates-2016');
+candidates2016.cardBackImage = 'themes/candidates/2016.png';
+candidates2016.cardFrontImages = [
             {
                 data_cardID: 'bush',
                 front: 'themes/candidates/bush.jpg'
