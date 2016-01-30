@@ -139,7 +139,7 @@ function Board(theme) {
         number_matches: 9
     };
     self.calculate_accuracy = function () {
-        var accuracy =  self.stats.attempts/self.stats.matches;
+        var accuracy = self.stats.attempts / self.stats.matches;
         accuracy = accuracy.toPrecision(3);
         return self.stats.accuracy = accuracy;
     };
@@ -158,7 +158,6 @@ Board.prototype.drawCards = function () {
 
     self.$el.html(self.$cardsContainer.html());
 };
-
 
 
 Board.prototype.$getCard = function (card) {
@@ -217,15 +216,15 @@ Card.prototype.getHTML = function (count) {
 };
 
 
-function createBoard(){
+function createBoard() {
     numberOfColumns = 6;
     numberOfRows = 3;
     board = new Board('disney');
     board.drawCards();
 }
 
-function card_is_clicked (e){
-    if(board.canFlipCard()){
+function card_is_clicked(e) {
+    if (board.canFlipCard()) {
         $(e.target).hide();
         var parent = $(e.target).parent().parent();
         board.flipCard($(parent));
@@ -234,9 +233,9 @@ function card_is_clicked (e){
 
 }
 
-Board.prototype.canFlipCard = function(){
+Board.prototype.canFlipCard = function () {
     var self = this;
-    if((self.card1 == null || self.card2 ==null)){
+    if ((self.card1 == null || self.card2 == null)) {
         return true;
     }
     else {
@@ -244,9 +243,9 @@ Board.prototype.canFlipCard = function(){
     }
 };
 
-Board.prototype.flipCard = function(card){
+Board.prototype.flipCard = function (card) {
     var self = this;
-    if(self.card1 == null) {
+    if (self.card1 == null) {
         self.card1 = card;
     }
     else {
@@ -256,9 +255,9 @@ Board.prototype.flipCard = function(card){
     }
 };
 
-Board.prototype.checkMatch = function(){
+Board.prototype.checkMatch = function () {
     var self = this;
-    if(self.card1.attr('data-cardid') === self.card2.attr('data-cardid')) {
+    if (self.card1.attr('data-cardid') === self.card2.attr('data-cardid')) {
         console.log('match found');
         self.card1.addClass('match');
         self.card2.addClass('match');
@@ -273,7 +272,7 @@ Board.prototype.checkMatch = function(){
     }
     else {
         console.log('not a match');
-        setTimeout(function(){
+        setTimeout(function () {
             var card1 = $(self.card1[0]).find('.back img')[0];
             var card2 = $(self.card2[0]).find('.back img')[0];
             self.increaseAttempts();
@@ -289,46 +288,46 @@ Board.prototype.checkMatch = function(){
     }
 };
 
-Board.prototype.updateStats = function(){
+Board.prototype.updateStats = function () {
     var self = this;
     var li_games_played = $('#li_gamesplayed');
     var li_accuracy = $('#li_accuracy');
     var li_attempts = $('#li_attempts');
     var li_matches = $('#li_matches');
     $(li_games_played).text(self.stats.games_played);
-    $(li_accuracy).text((self.stats.accuracy*100)+'%');
+    $(li_accuracy).text((self.stats.accuracy * 100) + '%');
     $(li_attempts).text(self.stats.attempts);
     $(li_matches).text(self.stats.matches);
 
 
 };
-Board.prototype.calculateAccuracy = function(){
+Board.prototype.calculateAccuracy = function () {
     var self = this;
-    var accuracy =self.stats.matches/self.stats.attempts;
+    var accuracy = self.stats.matches / self.stats.attempts;
     accuracy = accuracy.toFixed(3);
     self.stats.accuracy = accuracy;
 };
-Board.prototype.increaseAttempts = function(){
+Board.prototype.increaseAttempts = function () {
     var self = this;
     self.stats.attempts += 1;
 };
-Board.prototype.increaseMatches = function(){
+Board.prototype.increaseMatches = function () {
     var self = this;
     self.stats.matches += 1;
 };
-Board.prototype.increaseGamesPlayed = function(){
+Board.prototype.increaseGamesPlayed = function () {
     var self = this;
     self.stats.games_played += 1;
 };
-Board.prototype.checkForWin = function(){
+Board.prototype.checkForWin = function () {
     var self = this;
-    if(self.stats.number_matches == self.stats.matches) {
+    if (self.stats.number_matches == self.stats.matches) {
         console.log('you won!');
         self.increaseGamesPlayed();
     }
 };
 //TODO MAKE RESET WORK
-Board.prototype.reset = function(){
+Board.prototype.reset = function () {
     var self = this;
     var reset_button = $('#btn_reset');
 };

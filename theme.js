@@ -16,7 +16,7 @@ Theme.prototype = {
     }
 };
 
-var disneyPrincesses = new Theme('disney-princesses');
+var disneyPrincesses = new Theme('Disney Princesses');
 disneyPrincesses.cardBackImage = 'themes/disney/disney_backcard.png';
 disneyPrincesses.cardFrontImages = [
     {
@@ -57,7 +57,7 @@ disneyPrincesses.cardFrontImages = [
     }
 ];
 
-var safari = new Theme('safari');
+var safari = new Theme('Safari');
 safari.cardBackImage = 'themes/safari/cardback.png';
 safari.cardFrontImages = [
     {
@@ -98,7 +98,7 @@ safari.cardFrontImages = [
     }
 ];
 
-var candidates2016 = new Theme('candidates-2016');
+var candidates2016 = new Theme('2016 Candidates');
 candidates2016.cardBackImage = 'themes/candidates/2016.png';
 candidates2016.cardFrontImages = [
             {

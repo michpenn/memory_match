@@ -7,9 +7,77 @@
     <script src="card.js"></script>
     <script src="theme.js"></script>
     <script src="level.js"></script>
+    <script src="optionPicker.js"></script>
+    <script src="game.js"></script>
+    <script src="board.js"></script>
+    <!--&lt;!&ndash; Latest compiled and minified JavaScript &ndash;&gt;-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
+    <!--&lt;!&ndash; Latest compiled and minified CSS &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+<style>
+    .capitalize {
+        text-transform: capitalize;
+    }
 
+    .container_options {
+        border: 1px solid black;
+        position: relative;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+    .container_option_level {
+        display: none;
+    }
+    .container_choice_selection {
+        position: relative;
+    }
+
+    .button_choice_selection {
+    }
+#container_stats {
+    position: relative;
+    width: 15%;
+    border: 1px solid blue;
+    display: inline-block;
+}
+    #container_game {
+        position: relative;
+        width: 80%;
+        display: inline-block;
+    }
+    .card {
+        border: 1px solid black;
+        border-radius: 10%;
+        display: inline-block;
+        margin-left: 2%;
+        margin-top: 2%;
+        background-color: white;
+        overflow: hidden;
+        height: 150px;
+        width: 150px;
+        position: relative;
+        box-shadow: 3px 3px 1px #888888;
+
+    }
+    .front {
+        position: absolute;
+    }
+
+    .back {
+        position: absolute;
+        background-color: white;
+    }
+</style>
 </head>
 <body>
+<div class="options capitalize">
+</div>
+<div class="container-fluid">
+    <div id="container_stats"></div>
+    <div id="container_game"></div>
+</div>
 </body>
 
 <!--card flip: http://jsbin.com/vabibeyuro/edit?html,css,js,output-->

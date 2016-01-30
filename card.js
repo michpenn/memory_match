@@ -21,9 +21,14 @@ Card.prototype = {
             this.isFaceDown = true;
         }
     },
+    clickHandler: function(){
+        console.log('METHOD CLICK HANDLER WORKS!!!');
+},
+    clickTest: function(){
+    },
     getHTML: function () {
         var html =
-            '<div class="card" data-cardID="' + this.data_cardID + '" >' +
+            '<div class="card" data-cardID="' + this.data_cardID+'" >' +
             '<div class="front"><img src="' + this.frontImage + '"></div>' +
             '<div class="back"><img src="' + this.backImage + '"></div>' +
             '</div>';
