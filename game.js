@@ -12,11 +12,8 @@ Game.prototype ={
     constructor: Game,
     buildDeck: function(){
         var deck = [];
-        //console.log(this.level.cardsPerMatch);
         for(var i=0; i<this.level.numberOfCards; i++) {
-            //console.log(this.theme.cardBackImage);
             for(var j=0; j<this.level.cardsPerMatch; j++) {
-                //console.log(this.theme.cardFrontImages[i]);
                 var card = new Card(this.theme.cardFrontImages[i].data_cardID, this.theme.cardFrontImages[i].front,this.theme.cardBackImage);
                 deck.push(card);
             }
@@ -41,27 +38,19 @@ Game.prototype ={
     displayDeck: function(){
         for(var i=0; i<this.deck.length; i++) {
             var card= this.deck[i];
+            $(card).data(this.deck[i]);
             console.log(card);
-            card = this.clickTrial(card);
             $('#container_game').append(card.getHTML());
 
 
         }
-        //this.assignClickHandlers();
+        this.assignClickHandlers();
     },
     assignClickHandlers: function(){
-      $('.card').on('click',function(){
-          console.log('this works', this);
+      $('.card').on('click',function(e){
+          console.log('this works', $(e));
       });
     },
     buildBackground: function(){},
-    clickTrial: function(theobject){
-        $(theobject).on('click', function(){
-            alert('it finally worked');
-        });
-    }
-};
 
-function click(e){
-    console.log(e);
-}
+};

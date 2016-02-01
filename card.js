@@ -23,9 +23,13 @@ Card.prototype = {
     },
     clickHandler: function(){
         console.log('METHOD CLICK HANDLER WORKS!!!');
+        /*
+        * Checks if the board has room for a card
+        * checks if card is face down
+        * calls flip function
+        * calls board check match function
+        * */
 },
-    clickTest: function(){
-    },
     getHTML: function () {
         var html =
             '<div class="card" data-cardID="' + this.data_cardID+'" >' +
