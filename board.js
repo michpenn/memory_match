@@ -31,7 +31,10 @@ Board.prototype = {
     checkMatch: function(){},
     matchFound: function(){},
     matchNotFound: function(){},
-    displayCurrentStats: function(){}
+    displayCurrentStats: function(){
+
+    },
+    buildBackground: function(){},
 };
 
 var board = new Board();

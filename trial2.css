@@ -1,0 +1,115 @@
+.capitalize {
+    text-transform: capitalize;
+}
+
+.container_options {
+    border: 1px solid black;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    max-width: 100%;
+}
+
+.heading_options {
+    font-size: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container_option_level {
+    display: none;
+}
+
+.container_choice_selection {
+    position: relative;
+}
+
+.button_choice_selection {
+    /*max-width: 120px;*/
+    /*margin-left: 2%;*/
+    /*margin-bottom: 5%;*/
+    /*height: 20%;*/
+    /*font-size: 2em;*/
+
+}
+
+.container-fluid {
+    margin-top: auto;
+}
+
+#container_stats {
+    /*position: relative;*/
+    width: 15%;
+    border: 1px solid blue;
+    display: none;
+    /*display: inline-block;*/
+}
+
+#container_game {
+    position: relative;
+    width: 80%;
+    display: inline-block;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 10%;
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 2%;
+    background-color: white;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    box-shadow: 3px 3px 1px #888888;
+
+}
+
+.front {
+    position: absolute;
+}
+
+.back {
+    position: absolute;
+    background-color: white;
+}
+
+/*
+Media Queries
+*/
+
+/*TABLET*/
+@media (min-width: 769px) and (max-width: 991px) {
+
+    /*.heading_options {*/
+        /*font-size: 2em;*/
+        /*margin-left: auto;*/
+        /*margin-right: auto;*/
+    /*}*/
+
+    /*.button_choice_selection {*/
+        /*max-width: 320px;*/
+        /*margin-left: 2%;*/
+        /*margin-bottom: 5%;*/
+        /*height: 20%;*/
+        /*font-size: 2em;*/
+
+    /*}*/
+
+}
+
+/*MEDIUM DEVICES*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .button_choice_selection {
+        margin-left: 5%;
+    }
+}
+
+/*LARGE DESKTOPS*/
+@media (min-width: 1200px) {
+    .button_choice_selection {
+        margin-left: 5%;
+    }
+}

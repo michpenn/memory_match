@@ -58,7 +58,8 @@ OptionPicker.prototype = {
             class: 'container_options container_option_' + set.name
         });
         var optionTitle = $('<h1>', {
-            text: 'Please Chose Your ' + set.name
+            text: 'Please Chose Your ' + set.name,
+            class: 'heading_options col-xs-12 text-center'
         });
         var choicesContainer = $('<div>', {
             class: 'container_choices'
@@ -66,7 +67,7 @@ OptionPicker.prototype = {
         for (var i = 0; i < set.options.length; i++) {
             var choice = $('<button>', {
                 text: set.options[i].name,
-                class: 'button_choice_selection button_select_' + set.name,
+                class: 'col-xs-offset-2 col-xs-8 col-md-offset-0 col-md-3 button_choice_selection button_select_' + set.name,
                 id: 'button_select_' + set.options[i].name
             });
             $(choicesContainer).append(choice);

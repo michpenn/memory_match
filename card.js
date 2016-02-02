@@ -4,6 +4,7 @@
 
 function Card(data_cardID, frontImage, backImage) {
     this.data_cardID = data_cardID;
+    this.index;
     this.frontImage = frontImage;
     this.backImage = backImage;
     this.isFaceDown = true;
@@ -32,7 +33,7 @@ Card.prototype = {
 },
     getHTML: function () {
         var html =
-            '<div class="card" data-cardID="' + this.data_cardID+'" >' +
+            '<div class="card" data-index = "'+this.index +'" data-cardID="' + this.data_cardID+'" >' +
             '<div class="front"><img src="' + this.frontImage + '"></div>' +
             '<div class="back"><img src="' + this.backImage + '"></div>' +
             '</div>';

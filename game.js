@@ -38,19 +38,23 @@ Game.prototype ={
     displayDeck: function(){
         for(var i=0; i<this.deck.length; i++) {
             var card= this.deck[i];
-            $(card).data(this.deck[i]);
-            console.log(card);
+            card.index = i;
             $('#container_game').append(card.getHTML());
 
 
         }
+        console.log(this.deck);
         this.assignClickHandlers();
     },
     assignClickHandlers: function(){
       $('.card').on('click',function(e){
-          console.log('this works', $(e));
-      });
+          var card = $(e.target).parent().parent()[0];
+          var index = $(card).attr('data-index');
+          console.log(this[index]);
+          //console.log(this);
+
+      }.bind(this.deck));
     },
-    buildBackground: function(){},
+
 
 };

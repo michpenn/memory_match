@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            background: rgba(255,38,0,1);
+            background: -moz-linear-gradient(left, rgba(255,38,0,1) 0%, rgba(247,120,104,1) 24%, rgba(245,140,12,1) 51%, rgba(250,180,58,1) 71%, rgba(240,240,40,1) 100%);
+            background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,38,0,1)), color-stop(24%, rgba(247,120,104,1)), color-stop(51%, rgba(245,140,12,1)), color-stop(71%, rgba(250,180,58,1)), color-stop(100%, rgba(240,240,40,1)));
+            background: -webkit-linear-gradient(left, rgba(255,38,0,1) 0%, rgba(247,120,104,1) 24%, rgba(245,140,12,1) 51%, rgba(250,180,58,1) 71%, rgba(240,240,40,1) 100%);
+            background: -o-linear-gradient(left, rgba(255,38,0,1) 0%, rgba(247,120,104,1) 24%, rgba(245,140,12,1) 51%, rgba(250,180,58,1) 71%, rgba(240,240,40,1) 100%);
+            background: -ms-linear-gradient(left, rgba(255,38,0,1) 0%, rgba(247,120,104,1) 24%, rgba(245,140,12,1) 51%, rgba(250,180,58,1) 71%, rgba(240,240,40,1) 100%);
+            background: linear-gradient(to right, rgba(255,38,0,1) 0%, rgba(247,120,104,1) 24%, rgba(245,140,12,1) 51%, rgba(250,180,58,1) 71%, rgba(240,240,40,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff2600', endColorstr='#f0f028', GradientType=1 );
+        }
+
+         .game{
+            background-image:url('themes/safari/backgrounds/safari-app-wallpaper-2.jpg');
+            background-repeat:no-repeat;
+            background-position:center;
+             background-size:contain;
+             width: 100vw;
+             height: 100vh;
+        }
+
+         .safari-car-animation img {
+             max-width: 100%;
+             height: auto;
+             position: relative;
+             top: 250px;
+             left: 550px;
+         }
+         .safari-car-animation{
+             animation: safari_car_Frames linear 7s;
+             animation-iteration-count: 1;
+             transform-origin: 100% 100%;
+             -webkit-animation: safari_car_Frames linear 7s;
+             -webkit-animation-iteration-count: 1;
+             -webkit-transform-origin: 100% 100%;
+             -moz-animation: safari_car_Frames linear 7s;
+             -moz-animation-iteration-count: 1;
+             -moz-transform-origin: 100% 100%;
+             -o-animation: safari_car_Frames linear 7s;
+             -o-animation-iteration-count: 1;
+             -o-transform-origin: 100% 100%;
+             -ms-animation: safari_car_Frames linear 7s;
+             -ms-animation-iteration-count: 1;
+             -ms-transform-origin: 100% 100%;
+         }
+
+         @keyframes safari_car_Frames{
+             0% {
+                 transform:  translate(100%,100%)  ;
+             }
+             3% {
+                 transform:  translate(288px,145px)  ;
+             }
+             6% {
+                 transform:  translate(267px,149px)  ;
+             }
+             9% {
+                 transform:  translate(246px,148px)  ;
+             }
+             11% {
+                 transform:  translate(232px,147px)  ;
+             }
+             14% {
+                 transform:  translate(217px,146px)  ;
+             }
+             17% {
+                 transform:  translate(197px,149px)  ;
+             }
+             22% {
+                 transform:  translate(163px,147px)  ;
+             }
+             23% {
+                 transform:  translate(155px,149px)  ;
+             }
+             28% {
+                 transform:  translate(119px,148px)  ;
+             }
+             30% {
+                 transform:  translate(104px,149px)  ;
+             }
+             38% {
+                 transform:  translate(48px,147px)  ;
+             }
+             39% {
+                 transform:  translate(41px,145px)  ;
+             }
+             42% {
+                 transform:  translate(19px,144px)  ;
+             }
+             44% {
+                 transform:  translate(2px,148px)  ;
+             }
+             49% {
+                 transform:  translate(-32px,147px)  ;
+             }
+             51% {
+                 transform:  translate(-46px,147px)  ;
+             }
+             51% {
+                 transform:  translate(-46px,147px)  ;
+             }
+             54% {
+                 transform:  translate(-66px,146px)  ;
+             }
+             56% {
+                 transform:  translate(-82px,148px)  ;
+             }
+             62% {
+                 transform:  translate(-121px,147px)  ;
+             }
+             65% {
+                 transform:  translate(-140px,146px)  ;
+             }
+             71% {
+                 transform:  translate(-177px,145px)  ;
+             }
+             73% {
+                 transform:  translate(-189px,148px)  ;
+             }
+             80% {
+                 transform:  translate(-233px,147px)  ;
+             }
+             82% {
+                 transform:  translate(-247px,149px)  ;
+             }
+             87% {
+                 transform:  translate(-277px,146px)  ;
+             }
+             89% {
+                 transform:  translate(-292px,148px)  ;
+             }
+             94% {
+                 transform:  translate(-323px,146px)  ;
+             }
+             96% {
+                 transform:  translate(-337px,147px)  ;
+             }
+             100% {
+                 transform:  translate(-500px,147px)  ;
+             }
+         }
+
+         @-moz-keyframes safari_car_Frames{
+             0% {
+                 -moz-transform:  translate(100%,100%)  ;
+             }
+             3% {
+                 -moz-transform:  translate(288px,145px)  ;
+             }
+             6% {
+                 -moz-transform:  translate(267px,149px)  ;
+             }
+             9% {
+                 -moz-transform:  translate(246px,148px)  ;
+             }
+             11% {
+                 -moz-transform:  translate(232px,147px)  ;
+             }
+             14% {
+                 -moz-transform:  translate(217px,146px)  ;
+             }
+             17% {
+                 -moz-transform:  translate(197px,149px)  ;
+             }
+             22% {
+                 -moz-transform:  translate(163px,147px)  ;
+             }
+             23% {
+                 -moz-transform:  translate(155px,149px)  ;
+             }
+             28% {
+                 -moz-transform:  translate(119px,148px)  ;
+             }
+             30% {
+                 -moz-transform:  translate(104px,149px)  ;
+             }
+             38% {
+                 -moz-transform:  translate(48px,147px)  ;
+             }
+             39% {
+                 -moz-transform:  translate(41px,145px)  ;
+             }
+             42% {
+                 -moz-transform:  translate(19px,144px)  ;
+             }
+             44% {
+                 -moz-transform:  translate(2px,148px)  ;
+             }
+             49% {
+                 -moz-transform:  translate(-32px,147px)  ;
+             }
+             51% {
+                 -moz-transform:  translate(-46px,147px)  ;
+             }
+             51% {
+                 -moz-transform:  translate(-46px,147px)  ;
+             }
+             54% {
+                 -moz-transform:  translate(-66px,146px)  ;
+             }
+             56% {
+                 -moz-transform:  translate(-82px,148px)  ;
+             }
+             62% {
+                 -moz-transform:  translate(-121px,147px)  ;
+             }
+             65% {
+                 -moz-transform:  translate(-140px,146px)  ;
+             }
+             71% {
+                 -moz-transform:  translate(-177px,145px)  ;
+             }
+             73% {
+                 -moz-transform:  translate(-189px,148px)  ;
+             }
+             80% {
+                 -moz-transform:  translate(-233px,147px)  ;
+             }
+             82% {
+                 -moz-transform:  translate(-247px,149px)  ;
+             }
+             87% {
+                 -moz-transform:  translate(-277px,146px)  ;
+             }
+             89% {
+                 -moz-transform:  translate(-292px,148px)  ;
+             }
+             94% {
+                 -moz-transform:  translate(-323px,146px)  ;
+             }
+             96% {
+                 -moz-transform:  translate(-337px,147px)  ;
+             }
+             100% {
+                 -moz-transform:  translate(-500px,1470px)  ;
+             }
+         }
+
+         @-webkit-keyframes safari_car_Frames {
+             0% {
+                 -webkit-transform:  translate(100%,100%)  ;
+             }
+             3% {
+                 -webkit-transform:  translate(288px,145px)  ;
+             }
+             6% {
+                 -webkit-transform:  translate(267px,149px)  ;
+             }
+             9% {
+                 -webkit-transform:  translate(246px,148px)  ;
+             }
+             11% {
+                 -webkit-transform:  translate(232px,147px)  ;
+             }
+             14% {
+                 -webkit-transform:  translate(217px,146px)  ;
+             }
+             17% {
+                 -webkit-transform:  translate(197px,149px)  ;
+             }
+             22% {
+                 -webkit-transform:  translate(163px,147px)  ;
+             }
+             23% {
+                 -webkit-transform:  translate(155px,149px)  ;
+             }
+             28% {
+                 -webkit-transform:  translate(119px,148px)  ;
+             }
+             30% {
+                 -webkit-transform:  translate(104px,149px)  ;
+             }
+             38% {
+                 -webkit-transform:  translate(48px,147px)  ;
+             }
+             39% {
+                 -webkit-transform:  translate(41px,145px)  ;
+             }
+             42% {
+                 -webkit-transform:  translate(19px,144px)  ;
+             }
+             44% {
+                 -webkit-transform:  translate(2px,148px)  ;
+             }
+             49% {
+                 -webkit-transform:  translate(-32px,147px)  ;
+             }
+             51% {
+                 -webkit-transform:  translate(-46px,147px)  ;
+             }
+             51% {
+                 -webkit-transform:  translate(-46px,147px)  ;
+             }
+             54% {
+                 -webkit-transform:  translate(-66px,146px)  ;
+             }
+             56% {
+                 -webkit-transform:  translate(-82px,148px)  ;
+             }
+             62% {
+                 -webkit-transform:  translate(-121px,147px)  ;
+             }
+             65% {
+                 -webkit-transform:  translate(-140px,146px)  ;
+             }
+             71% {
+                 -webkit-transform:  translate(-177px,145px)  ;
+             }
+             73% {
+                 -webkit-transform:  translate(-189px,148px)  ;
+             }
+             80% {
+                 -webkit-transform:  translate(-233px,147px)  ;
+             }
+             82% {
+                 -webkit-transform:  translate(-247px,149px)  ;
+             }
+             87% {
+                 -webkit-transform:  translate(-277px,146px)  ;
+             }
+             89% {
+                 -webkit-transform:  translate(-292px,148px)  ;
+             }
+             94% {
+                 -webkit-transform:  translate(-323px,146px)  ;
+             }
+             96% {
+                 -webkit-transform:  translate(-337px,147px)  ;
+             }
+             100% {
+                 -webkit-transform:  translate(-500px,147px)  ;
+             }
+         }
+
+         @-o-keyframes safari_car_Frames {
+             0% {
+                 -o-transform:  translate(100%,100%)  ;
+             }
+             3% {
+                 -o-transform:  translate(288px,145px)  ;
+             }
+             6% {
+                 -o-transform:  translate(267px,149px)  ;
+             }
+             9% {
+                 -o-transform:  translate(246px,148px)  ;
+             }
+             11% {
+                 -o-transform:  translate(232px,147px)  ;
+             }
+             14% {
+                 -o-transform:  translate(217px,146px)  ;
+             }
+             17% {
+                 -o-transform:  translate(197px,149px)  ;
+             }
+             22% {
+                 -o-transform:  translate(163px,147px)  ;
+             }
+             23% {
+                 -o-transform:  translate(155px,149px)  ;
+             }
+             28% {
+                 -o-transform:  translate(119px,148px)  ;
+             }
+             30% {
+                 -o-transform:  translate(104px,149px)  ;
+             }
+             38% {
+                 -o-transform:  translate(48px,147px)  ;
+             }
+             39% {
+                 -o-transform:  translate(41px,145px)  ;
+             }
+             42% {
+                 -o-transform:  translate(19px,144px)  ;
+             }
+             44% {
+                 -o-transform:  translate(2px,148px)  ;
+             }
+             49% {
+                 -o-transform:  translate(-32px,147px)  ;
+             }
+             51% {
+                 -o-transform:  translate(-46px,147px)  ;
+             }
+             51% {
+                 -o-transform:  translate(-46px,147px)  ;
+             }
+             54% {
+                 -o-transform:  translate(-66px,146px)  ;
+             }
+             56% {
+                 -o-transform:  translate(-82px,148px)  ;
+             }
+             62% {
+                 -o-transform:  translate(-121px,147px)  ;
+             }
+             65% {
+                 -o-transform:  translate(-140px,146px)  ;
+             }
+             71% {
+                 -o-transform:  translate(-177px,145px)  ;
+             }
+             73% {
+                 -o-transform:  translate(-189px,148px)  ;
+             }
+             80% {
+                 -o-transform:  translate(-233px,147px)  ;
+             }
+             82% {
+                 -o-transform:  translate(-247px,149px)  ;
+             }
+             87% {
+                 -o-transform:  translate(-277px,146px)  ;
+             }
+             89% {
+                 -o-transform:  translate(-292px,148px)  ;
+             }
+             94% {
+                 -o-transform:  translate(-323px,146px)  ;
+             }
+             96% {
+                 -o-transform:  translate(-337px,147px)  ;
+             }
+             100% {
+                 -o-transform: translate(-500px,147px)  ;
+             }
+         }
+
+         @-ms-keyframes safari_car_Frames {
+             0% {
+                 -ms-transform:  translate(100%, 100%)  ;
+             }
+             3% {
+                 -ms-transform:  translate(288px,145px)  ;
+             }
+             6% {
+                 -ms-transform:  translate(267px,149px)  ;
+             }
+             9% {
+                 -ms-transform:  translate(246px,148px)  ;
+             }
+             11% {
+                 -ms-transform:  translate(232px,147px)  ;
+             }
+             14% {
+                 -ms-transform:  translate(217px,146px)  ;
+             }
+             17% {
+                 -ms-transform:  translate(197px,149px)  ;
+             }
+             22% {
+                 -ms-transform:  translate(163px,147px)  ;
+             }
+             23% {
+                 -ms-transform:  translate(155px,149px)  ;
+             }
+             28% {
+                 -ms-transform:  translate(119px,148px)  ;
+             }
+             30% {
+                 -ms-transform:  translate(104px,149px)  ;
+             }
+             38% {
+                 -ms-transform:  translate(48px,147px)  ;
+             }
+             39% {
+                 -ms-transform:  translate(41px,145px)  ;
+             }
+             42% {
+                 -ms-transform:  translate(19px,144px)  ;
+             }
+             44% {
+                 -ms-transform:  translate(2px,148px)  ;
+             }
+             49% {
+                 -ms-transform:  translate(-32px,147px)  ;
+             }
+             51% {
+                 -ms-transform:  translate(-46px,147px)  ;
+             }
+             51% {
+                 -ms-transform:  translate(-46px,147px)  ;
+             }
+             54% {
+                 -ms-transform:  translate(-66px,146px)  ;
+             }
+             56% {
+                 -ms-transform:  translate(-82px,148px)  ;
+             }
+             62% {
+                 -ms-transform:  translate(-121px,147px)  ;
+             }
+             65% {
+                 -ms-transform:  translate(-140px,146px)  ;
+             }
+             71% {
+                 -ms-transform:  translate(-177px,145px)  ;
+             }
+             73% {
+                 -ms-transform:  translate(-189px,148px)  ;
+             }
+             80% {
+                 -ms-transform:  translate(-233px,147px)  ;
+             }
+             82% {
+                 -ms-transform:  translate(-247px,149px)  ;
+             }
+             87% {
+                 -ms-transform:  translate(-277px,146px)  ;
+             }
+             89% {
+                 -ms-transform:  translate(-292px,148px)  ;
+             }
+             94% {
+                 -ms-transform:  translate(-323px,146px)  ;
+             }
+             96% {
+                 -ms-transform:  translate(-337px,147px)  ;
+             }
+             100% {
+                 -ms-transform:  translate(-500px,147px)  ;
+             }
+         }
+    </style>
+</head>
+<body>
+<div class="game">
+<div class="safari-car-animation">
+    <img src="themes/safari/backgrounds/animations/boy_jeep.png" />
+</div>
+</div>
+</body>
+</html>
