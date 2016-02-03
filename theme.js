@@ -5,14 +5,21 @@ function Theme(name) {
     this.name = name;
     this.cardBackImage = '';
     this.cardFrontImages = [];
+    this.background = [];
     this.timerIntervalAnimations;
 }
 
 Theme.prototype = {
     constructor: Theme,
     onGameStart: function () {
+        console.log('this is where to load things that happen before game');
+        $('.options').remove();
+        $('#container_stats').show();
+        this.loadBackground();
     },
+    loadBackground: function (){},
     onGameEnd: function () {
+        console.log('this is where to load things that happen at the end of the game');
     }
 };
 
@@ -56,6 +63,10 @@ disneyPrincesses.cardFrontImages = [
         front: 'themes/disney/disney_tinkerbell.png'
     }
 ];
+disneyPrincesses.loadBackground = function(){
+    console.log('load the background here');
+    $('.container-full-game').addClass('background_princess');
+};
 
 var safari = new Theme('Safari');
 safari.cardBackImage = 'themes/safari/cardback.png';
@@ -97,6 +108,10 @@ safari.cardFrontImages = [
         front: 'themes/safari/zebra1.png'
     }
 ];
+safari.loadBackground = function(){
+    console.log('load the background here');
+    $('.container-full-game').addClass('background_safari');
+};
 
 var candidates2016 = new Theme('2016 Candidates');
 candidates2016.cardBackImage = 'themes/candidates/2016.png';
@@ -138,3 +153,7 @@ candidates2016.cardFrontImages = [
                 front: 'themes/candidates/trump.jpg'
             }
         ];
+candidates2016.loadBackground = function(){
+    console.log('load the background here');
+    $('.container-full-game').addClass('background_2016');
+};

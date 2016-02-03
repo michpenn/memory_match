@@ -60,35 +60,60 @@ Game.prototype = {
         }.bind(this.deck));
     },
     checkCard: function (card) {
+        /*
+        * Idea: put cards in an array and check array length for checking match
+        * */
         if (this.level.cardsPerMatch == 2) {
             if (this.card1 == null || this.card2 == null) {
                 this.assignCard(card);
             }
             else {
-                console.log('there are not openings');
+                console.log('cards filled');
+                return;
             }
         }
         else if (this.level.cardsPerMatch == 3) {
-
+            if (this.card1 == null || this.card2 == null || this.card3 ==null) {}
+            else {
+                return;
+            }
         }
 
     },
     assignCard: function (card) {
-        if (this.card1 == null) {
-            this.card1 = card;
-            this.flipCard(card);
+        if (this.level.cardsPerMatch == 2){
+            if (this.card1 == null) {
+                this.card1 = card;
+                this.flipCard(card);
+            }
+            else if (this.card2 == null &&(this.card1.index != card.index)) {
+                this.card2 = card;
+                this.flipCard(card);
+                this.checkMatch();
+            }
         }
-        else if (this.card2 == null) {
-            this.card2 = card;
-            this.flipCard(card);
-            this.checkMatch();
+        else if(this.level.cardsPerMatch ==3) {
+            if (this.card1 == null) {
+                this.card1 = card;
+                this.flipCard(card);
+            }
+            else if (this.card2 == null) {
+                this.card2 = card;
+                this.flipCard(card);
+            }
+            else if(this.card3 == null) {
+                this.card3 = card;
+                this.flipCard(card);
+                this.checkMatch();
+            }
         }
+
     },
     flipCard: function (card) {
         card.flip();
     },
     checkMatch: function () {
-        if (this.card1.data_cardID == this.card2.data_cardID) {
+        if ((this.card1.data_cardID == this.card2.data_cardID)) {
             this.matchFound(this.card1, this.card2);
         }
         else {
@@ -103,9 +128,9 @@ Game.prototype = {
         setTimeout(function () {
             card1.matched();
             card2.matched();
-        }, 1000);
-        this.card1 = null;
-        this.card2 = null;
+            board.game.card1 = null;
+            board.game.card2 = null;
+        }, 2000);
         this.updateStats_matches();
         board.checkForWin();
     },
@@ -113,9 +138,9 @@ Game.prototype = {
         setTimeout(function () {
             card1.flip();
             card2.flip();
+            board.game.card1 = null;
+            board.game.card2 = null;
         }, 2000);
-        this.card1 = null;
-        this.card2 = null;
     },
     updateStats_attempts: function(){
         board.stats.attempts++;
@@ -123,6 +148,7 @@ Game.prototype = {
     updateStats_matches: function(){
         board.stats.matches++;
     },
+    reshuffle: function(){},
 
 
 

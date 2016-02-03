@@ -83,7 +83,7 @@ OptionPicker.prototype = {
         var selectedTheme = $(e.target).text();
         options.saveWinningOption(selectedTheme, 0);
         options.counterChoicesMade++;
-        $(e.target).parent().parent().fadeOut(1500, 'linear',function(){
+        $(e.target).parent().parent().fadeOut(1000, 'linear',function(){
             options.displayNextSet();
         });
     },
@@ -91,7 +91,7 @@ OptionPicker.prototype = {
         var selectedLevel = $(e.target).text();
         options.counterChoicesMade++;
         options.saveWinningOption(selectedLevel, 1);
-        $(e.target).parent().parent().fadeOut(1500, 'linear',function(){
+        $(e.target).parent().parent().fadeOut(1000, 'linear',function(){
             options.displayNextSet();
         });
         //increment options counter and call next option function

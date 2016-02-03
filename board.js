@@ -21,6 +21,7 @@ Board.prototype = {
     buildGame: function () {
         var theme = this.optionPicker.winningOptions.theme;
         var level = this.optionPicker.winningOptions.level;
+        theme.onGameStart();
         this.game = new Game(theme, level);
     },
     calculateAccuracy: function(){
@@ -31,6 +32,10 @@ Board.prototype = {
     },
     displayCurrentStats: function () {
         this.calculateAccuracy();
+        $('#span_games_played').text(this.stats.games_played);
+        $('#span_attempts').text(this.stats.attempts);
+        $('#span_accuracy').text(this.stats.accuracy);
+        $('#span_matches').text(this.stats.matches);
         console.log(this.stats);
     },
     checkForWin: function(){
@@ -45,5 +50,6 @@ Board.prototype = {
 var board = new Board();
 
 $(document).ready(function () {
+    $('#container_stats').hide();
     board.optionPicker.getOptions();
 });
