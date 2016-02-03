@@ -41,13 +41,16 @@ OptionPicker.prototype = {
         for (var i = 0; i < this.optionSets.length; i++) {
             if (!this.winningOptions[this.optionSets[i].name]) {
                 console.log('this needs to be loaded: ' + this.optionSets[i].name);
-                $('.container_option_' + this.optionSets[i].name).css('display', 'initial');
+                $('.container_option_' + this.optionSets[i].name).css('display', 'block');
             }
             console.log(this.counterChoicesMade, this.counterMax);
         }
         if (this.counterChoicesMade == this.counterMax) {
             console.log('let the game begin');
-            board.buildGame();
+            $(board).fadeIn(1000, function(){
+                board.buildGame();
+            });
+
         }
         else {
             console.log('display next set');
@@ -59,7 +62,7 @@ OptionPicker.prototype = {
         });
         var optionTitle = $('<h1>', {
             text: 'Please Chose Your ' + set.name,
-            class: 'heading_options col-xs-12 text-center'
+            class: 'heading_options'
         });
         var choicesContainer = $('<div>', {
             class: 'container_choices'
@@ -67,7 +70,7 @@ OptionPicker.prototype = {
         for (var i = 0; i < set.options.length; i++) {
             var choice = $('<button>', {
                 text: set.options[i].name,
-                class: 'col-xs-offset-2 col-xs-8 col-md-offset-0 col-md-3 button_choice_selection button_select_' + set.name,
+                class: 'capitalize button_choice_selection button_select_' + set.name,
                 id: 'button_select_' + set.options[i].name
             });
             $(choicesContainer).append(choice);
@@ -76,25 +79,21 @@ OptionPicker.prototype = {
         $('.options').append(optionContainer);
         this.counterChoicesDisplayed++;
     },
-    //pickWinningOption: function (e) {
-    //    var selection = $(e.target).text();
-    //    console.log('this works: ' + selection);
-    //    options.saveWinningOption(selection);
-    //    $(e.target).parent().parent().hide();
-    //},
     pickWinningTheme: function (e) {
         var selectedTheme = $(e.target).text();
         options.saveWinningOption(selectedTheme, 0);
         options.counterChoicesMade++;
-        $(e.target).parent().parent().hide();
-        options.displayNextSet();
+        $(e.target).parent().parent().fadeOut(1500, 'linear',function(){
+            options.displayNextSet();
+        });
     },
     pickWinningLevel: function (e) {
         var selectedLevel = $(e.target).text();
         options.counterChoicesMade++;
         options.saveWinningOption(selectedLevel, 1);
-        $(e.target).parent().parent().hide();
-        options.displayNextSet();
+        $(e.target).parent().parent().fadeOut(1500, 'linear',function(){
+            options.displayNextSet();
+        });
         //increment options counter and call next option function
     },
     saveWinningOption: function (option, index) {
@@ -105,11 +104,6 @@ OptionPicker.prototype = {
                 break;
             }
         }
-        //console.log(this.winningOptions);
-    },
-    confirmOptions: function () {
-    },
-    changeOptions: function () {
     }
 
 };

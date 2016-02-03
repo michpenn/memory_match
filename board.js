@@ -1,7 +1,7 @@
 /**
  * Created by michpenn on 1/28/16.
  */
-function Board(){
+function Board() {
     this.optionPicker = options;
     this.game;
     this.stats = {
@@ -15,30 +15,35 @@ function Board(){
 
 Board.prototype = {
     constructor: Board,
-    getOptions: function(){
+    getOptions: function () {
         this.optionPicker.getOptions(this.buildGame);
     },
-    buildGame: function(){
+    buildGame: function () {
         var theme = this.optionPicker.winningOptions.theme;
         var level = this.optionPicker.winningOptions.level;
         this.game = new Game(theme, level);
     },
-    cardClicked: function(){
-        console.log('card clicked');
-        //console.log($(e.target).parent());
-        console.log($(this));
+    calculateAccuracy: function(){
+      var accuracy = this.stats.matches/this.stats.attempts;
+        accuracy = accuracy.toFixed(2);
+        accuracy = parseFloat(accuracy);
+        this.stats.accuracy = Math.round(accuracy*100)+'%';
     },
-    checkMatch: function(){},
-    matchFound: function(){},
-    matchNotFound: function(){},
-    displayCurrentStats: function(){
-
+    displayCurrentStats: function () {
+        this.calculateAccuracy();
+        console.log(this.stats);
     },
-    buildBackground: function(){},
+    checkForWin: function(){
+        if(this.stats.matches == this.stats.number_matches){
+            console.log('you win!');
+        }
+    },
+    buildBackground: function () {
+    },
 };
 
 var board = new Board();
 
-$(document).ready(function(){
+$(document).ready(function () {
     board.optionPicker.getOptions();
 });

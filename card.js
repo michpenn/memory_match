@@ -14,22 +14,23 @@ Card.prototype = {
     constructor: Card,
     flip: function () {
         if (this.isFaceDown) {
-            //apply class flip up
+            $('div[data-index='+ this.index+']').addClass('flipped');
             this.isFaceDown = false;
         }
         else {
-            //apply class to flip up
+            $('div[data-index='+ this.index+']').removeClass('flipped');
             this.isFaceDown = true;
         }
     },
+    matched: function(){
+        $('div[data-index='+ this.index+']').addClass('match');
+
+    },
     clickHandler: function(){
-        console.log('METHOD CLICK HANDLER WORKS!!!');
-        /*
-        * Checks if the board has room for a card
-        * checks if card is face down
-        * calls flip function
-        * calls board check match function
-        * */
+        console.log(this);
+        console.log(board.game);
+        board.game.checkCard(this);
+
 },
     getHTML: function () {
         var html =
