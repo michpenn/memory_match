@@ -61,8 +61,8 @@ Game.prototype = {
     },
     checkCard: function (card) {
         /*
-        * Idea: put cards in an array and check array length for checking match
-        * */
+         * Idea: put cards in an array and check array length for checking match
+         * */
         if (this.level.cardsPerMatch == 2) {
             if (this.card1 == null || this.card2 == null) {
                 this.assignCard(card);
@@ -73,7 +73,9 @@ Game.prototype = {
             }
         }
         else if (this.level.cardsPerMatch == 3) {
-            if (this.card1 == null || this.card2 == null || this.card3 ==null) {}
+            if (this.card1 == null || this.card2 == null || this.card3 == null) {
+                this.assignCard(card);
+            }
             else {
                 return;
             }
@@ -81,27 +83,27 @@ Game.prototype = {
 
     },
     assignCard: function (card) {
-        if (this.level.cardsPerMatch == 2){
+        if (this.level.cardsPerMatch == 2) {
             if (this.card1 == null) {
                 this.card1 = card;
                 this.flipCard(card);
             }
-            else if (this.card2 == null &&(this.card1.index != card.index)) {
+            else if (this.card2 == null && (this.card1.index != card.index)) {
                 this.card2 = card;
                 this.flipCard(card);
                 this.checkMatch();
             }
         }
-        else if(this.level.cardsPerMatch ==3) {
+        else if (this.level.cardsPerMatch == 3) {
             if (this.card1 == null) {
                 this.card1 = card;
                 this.flipCard(card);
             }
-            else if (this.card2 == null) {
+            else if (this.card2 == null && (this.card1.index != card.index)) {
                 this.card2 = card;
                 this.flipCard(card);
             }
-            else if(this.card3 == null) {
+            else if (this.card3 == null && ((this.card1.index != card.index) && (this.card2.index != card.index))) {
                 this.card3 = card;
                 this.flipCard(card);
                 this.checkMatch();
@@ -113,11 +115,22 @@ Game.prototype = {
         card.flip();
     },
     checkMatch: function () {
-        if ((this.card1.data_cardID == this.card2.data_cardID)) {
-            this.matchFound(this.card1, this.card2);
+        if (this.level.cardsPerMatch == 2) {
+            if ((this.card1.data_cardID == this.card2.data_cardID)) {
+                this.matchFound(this.card1, this.card2);
+            }
+            else {
+                this.matchNotFound(this.card1, this.card2);
+            }
         }
-        else {
-            this.matchNotFound(this.card1, this.card2);
+        else if (this.level.cardsPerMatch ==3) {
+            if ((this.card1.data_cardID == this.card2.data_cardID) && (this.card1.data_cardID  == this.card3.data_cardID)) {
+                this.matchFound_3(this.card1, this.card2, this.card3);
+            }
+            else {
+                this.matchNotFound_3(this.card1,this.card2, this.card3);
+            }
+
         }
         this.updateStats_attempts();
         board.displayCurrentStats();
@@ -134,6 +147,19 @@ Game.prototype = {
         this.updateStats_matches();
         board.checkForWin();
     },
+    matchFound_3: function(card1, card2, card3){
+        console.log('match of 3 found!');
+        setTimeout(function(){
+            card1.matched();
+            card2.matched();
+            card3.matched();
+            board.game.card1 = null;
+            board.game.card2 = null;
+            board.game.card3 = null;
+        },3000);
+        this.updateStats_matches();
+        board.checkForWin();
+    },
     matchNotFound: function (card1, card2) {
         setTimeout(function () {
             card1.flip();
@@ -142,14 +168,29 @@ Game.prototype = {
             board.game.card2 = null;
         }, 2000);
     },
-    updateStats_attempts: function(){
+    matchNotFound_3: function(card1, card2, card3){
+        setTimeout(function(){
+            card1.flip();
+            card2.flip();
+            card3.flip();
+            board.game.card1 = null;
+            board.game.card2 = null;
+            board.game.card3 = null;
+        },2000);
+    },
+    updateStats_attempts: function () {
         board.stats.attempts++;
     },
-    updateStats_matches: function(){
+    updateStats_matches: function () {
         board.stats.matches++;
     },
-    reshuffle: function(){},
-
+    reshuffle: function () {
+        /*
+         $($('.card')[0]).offset()
+         $($('.card')[0]).position()
+         $($('.card')[0]).parent().offset()
+         */
+    },
 
 
 };
