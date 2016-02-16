@@ -53,15 +53,28 @@ Board.prototype = {
     },
     reset_game: function(){
         console.log('make everything work in this function');
-        this.calculate_overlay_size();
+        //this.calculate_overlay_size();
         
     },
     display_reset: function () {
-        console.log('display the reset options here');
         var inner_height = window.innerHeight;
         var inner_width = window.innerWidth;
+        var overlay = $('#blanket');
+        var options_div = $('#popUpDiv');
 
-        this.calculate_overlay_size(inner_height, inner_width);
+        if($(overlay).css('display') == 'none' && $(options_div).css('display') == 'none'){
+            $(overlay).show();
+            $(options_div).show();
+            board.display_reset_options();
+        }
+        else {
+            $(overlay).hide();
+            $(options_div).hide();
+        }
+        //this.display_reset_options();
+        //$('#blanket').css('display', 'initial');
+        //var div_reset_options = $('');
+
 
         /*
          * Give option to change theme and level
@@ -70,84 +83,57 @@ Board.prototype = {
          * increase number of games played
          * */
     },
-    calculate_overlay_size: function(height, width){
-        console.log(height, width);
-    },
-    toggle_reset_display: function () {
-        var reset_div = $('#popUpDiv');
-        console.log($(reset_div).css('display'));
-        if ($(reset_div).css('display') == 'none') {
-            $(reset_div).css('display', 'block');
-        }
-        else if ($(reset_div).css('display') == 'block') {
-            $(reset_div).css('display', 'none');
-        }
-    },
-    toggle_overlay_display: function(){
-        console.log('toggle the overlay here');
-    },
-    toggle: function (div_id) {
-        var el = document.getElementById(div_id);
-        if (el.style.display == 'none') {
-            el.style.display = 'block';
-        }
-        else {
-            el.style.display = 'none';
-        }
-    },
-    blanket_size: function (popUpDivVar) {
-        var viewport_height;
-        var blanket_height;
-        var popUpDiv_height;
-        if (typeof window.innerWidth != 'undefined') {
-            viewport_height = window.innerHeight;
-        } else {
-            viewport_height = document.documentElement.clientHeight;
-        }
-        if ((viewport_height > document.body.parentNode.scrollHeight) && (viewport_height > document.body.parentNode.clientHeight)) {
-            blanket_height = viewport_height;
-        } else {
-            if (document.body.parentNode.clientHeight > document.body.parentNode.scrollHeight) {
-                blanket_height = document.body.parentNode.clientHeight;
-            } else {
-                blanket_height = document.body.parentNode.scrollHeight;
+    display_reset_options: function(){
+        for(var i=0; i<this.optionPicker.optionSets.length; i++) {
+            var this_option = this.optionPicker.optionSets[i];
+            var fieldset = $('<fieldset>');
+            var legend = $('<legend>', {
+                text: 'your ' +this_option.name + ' options are:'
+            });
+            $(fieldset).append(legend);
+            for(var j =0; j<this_option.options.length; j++) {
+                var option = $('<input>', {
+                    type: 'radio',
+                    name: this_option.name,
+                    value: this_option.options[j].name,
+                    required: 'required'
+                });
+                var label = $('<label>', {
+                    for: this_option.options[j].name,
+                    text: this_option.options[j].name
+                });
+                var linebreak = $('<br>');
+                $(fieldset).append(option, label, linebreak);
             }
-        }
-        var blanket = document.getElementById('blanket');
-        blanket.style.height = blanket_height + 'px';
-        var popUpDiv = document.getElementById(popUpDivVar);
-        popUpDiv_height = blanket_height / 2 - 200;//200 is half popup's height
-        popUpDiv.style.top = popUpDiv_height + 'px';
-    },
-    window_pos: function (popUpDivVar) {
-        var viewport_width;
-        var window_width;
-        if (typeof window.innerWidth != 'undefined') {
-            viewport_width = window.innerHeight;
-        } else {
-            viewport_width = document.documentElement.clientHeight;
-        }
-        if ((viewport_width > document.body.parentNode.scrollWidth) && (viewport_width > document.body.parentNode.clientWidth)) {
-            window_width = viewport_width;
-        } else {
-            if (document.body.parentNode.clientWidth > document.body.parentNode.scrollWidth) {
-                window_width = document.body.parentNode.clientWidth;
-            } else {
-                window_width = document.body.parentNode.scrollWidth;
-            }
-        }
-        var popUpDiv = document.getElementById(popUpDivVar);
-        window_width=window_width/2-200;//200 is half popup's width
-        popUpDiv.style.left = window_width + 'px';/**/
-    },
-    popup: function (windowname) {
-        this.blanket_size(windowname);
-        this.window_pos(windowname);
-        this.toggle('blanket');
-        this.toggle(windowname);
-    },
 
-    close_reset: function () {
+            $('#reset_form').append(fieldset);
+        }
+        var reset_choices_button = $('<button>', {
+            text: 'Create new game',
+            type: 'button'
+        });
+        $('#reset_form').append(reset_choices_button);
+        $(reset_choices_button).on('click', this.make_new_game);
+    },
+    make_new_game: function(){
+        var new_game_selections = [];
+        console.log('makes new game with selected options');
+        var form = $('#reset_form')[0];
+        //console.log(form, form2);
+        //console.log(($(form)).children());
+        for(var i=0; i< ($(form)).children().length; i++){
+            var children_elements = $(form).children()[i];
+            //console.log(children_elements);
+            for(var j=0; j<($(children_elements)).children().length; j++) {
+                if(($(children_elements)).children()[j].nodeName == 'INPUT'){
+                    var input_variable = ($(children_elements)).children()[j];
+                    if($(input_variable).is(':checked')){
+                        new_game_selections.push($(input_variable)[0].value);
+                    }
+                }
+            }
+        }
+       console.log(new_game_selections);
     }
 };
 

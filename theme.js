@@ -64,7 +64,6 @@ disneyPrincesses.cardFrontImages = [
     }
 ];
 disneyPrincesses.loadBackground = function(){
-    console.log('load the background here');
     $('.container-full-game').addClass('background_princess');
 };
 
@@ -109,7 +108,6 @@ safari.cardFrontImages = [
     }
 ];
 safari.loadBackground = function(){
-    console.log('load the background here');
     $('.container-full-game').addClass('background_safari');
 };
 
@@ -154,6 +152,5 @@ candidates2016.cardFrontImages = [
             }
         ];
 candidates2016.loadBackground = function(){
-    console.log('load the background here');
     $('.container-full-game').addClass('background_2016');
 };
