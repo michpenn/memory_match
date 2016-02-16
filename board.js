@@ -26,10 +26,18 @@ Board.prototype = {
         this.resetHandler();
     },
     calculateAccuracy: function () {
-        var accuracy = this.stats.matches / this.stats.attempts;
-        accuracy = accuracy.toFixed(2);
-        accuracy = parseFloat(accuracy);
+        var accuracy;
+        if (this.stats.attempts === 0) {
+            accuracy = 0;
+        }
+        else {
+            accuracy = this.stats.matches / this.stats.attempts;
+            accuracy = accuracy.toFixed(2);
+            accuracy = parseFloat(accuracy);
+
+        }
         this.stats.accuracy = Math.round(accuracy * 100) + '%';
+
     },
     displayCurrentStats: function () {
         this.calculateAccuracy();
@@ -37,32 +45,24 @@ Board.prototype = {
         $('#span_attempts').text(this.stats.attempts);
         $('#span_accuracy').text(this.stats.accuracy);
         $('#span_matches').text(this.stats.matches);
-        console.log(this.stats);
     },
     checkForWin: function () {
         if (this.stats.matches == this.stats.number_matches) {
             console.log('you win!');
+            this.game.updateStats_gamesPlayed();
+            this.displayCurrentStats();
         }
-    },
-    buildBackground: function () {
     },
     resetHandler: function () {
         $('.button_reset, #closeLink').on('click', this.display_reset);
 
 
     },
-    reset_game: function(){
-        console.log('make everything work in this function');
-        //this.calculate_overlay_size();
-        
-    },
     display_reset: function () {
-        var inner_height = window.innerHeight;
-        var inner_width = window.innerWidth;
         var overlay = $('#blanket');
         var options_div = $('#popUpDiv');
 
-        if($(overlay).css('display') == 'none' && $(options_div).css('display') == 'none'){
+        if ($(overlay).css('display') == 'none' && $(options_div).css('display') == 'none') {
             $(overlay).show();
             $(options_div).show();
             board.display_reset_options();
@@ -71,10 +71,6 @@ Board.prototype = {
             $(overlay).hide();
             $(options_div).hide();
         }
-        //this.display_reset_options();
-        //$('#blanket').css('display', 'initial');
-        //var div_reset_options = $('');
-
 
         /*
          * Give option to change theme and level
@@ -83,15 +79,15 @@ Board.prototype = {
          * increase number of games played
          * */
     },
-    display_reset_options: function(){
-        for(var i=0; i<this.optionPicker.optionSets.length; i++) {
+    display_reset_options: function () {
+        for (var i = 0; i < this.optionPicker.optionSets.length; i++) {
             var this_option = this.optionPicker.optionSets[i];
             var fieldset = $('<fieldset>');
             var legend = $('<legend>', {
-                text: 'your ' +this_option.name + ' options are:'
+                text: 'your ' + this_option.name + ' options are:'
             });
             $(fieldset).append(legend);
-            for(var j =0; j<this_option.options.length; j++) {
+            for (var j = 0; j < this_option.options.length; j++) {
                 var option = $('<input>', {
                     type: 'radio',
                     name: this_option.name,
@@ -113,27 +109,38 @@ Board.prototype = {
             type: 'button'
         });
         $('#reset_form').append(reset_choices_button);
-        $(reset_choices_button).on('click', this.make_new_game);
+        $(reset_choices_button).on('click', this.make_new_game.bind(this));
+        console.log(this);
     },
-    make_new_game: function(){
+    make_new_game: function () {
         var new_game_selections = [];
-        console.log('makes new game with selected options');
         var form = $('#reset_form')[0];
-        //console.log(form, form2);
-        //console.log(($(form)).children());
-        for(var i=0; i< ($(form)).children().length; i++){
+        for (var i = 0; i < ($(form)).children().length; i++) {
             var children_elements = $(form).children()[i];
-            //console.log(children_elements);
-            for(var j=0; j<($(children_elements)).children().length; j++) {
-                if(($(children_elements)).children()[j].nodeName == 'INPUT'){
+            for (var j = 0; j < ($(children_elements)).children().length; j++) {
+                if (($(children_elements)).children()[j].nodeName == 'INPUT') {
                     var input_variable = ($(children_elements)).children()[j];
-                    if($(input_variable).is(':checked')){
+                    if ($(input_variable).is(':checked')) {
                         new_game_selections.push($(input_variable)[0].value);
                     }
                 }
             }
         }
-       console.log(new_game_selections);
+        this.remove_old_game();
+        this.optionPicker.changeOptions(new_game_selections[0], new_game_selections[1]);
+        setTimeout(function () {
+            this.buildGame();
+            this.game.updateStats_gamesPlayed();
+            this.displayCurrentStats();
+        }.bind(this), 1200);
+
+
+    },
+    remove_old_game: function () {
+        $('#popUpDiv').fadeOut('slow');
+        $('.card').fadeOut(1000, 'swing', function () {
+            $(this).remove();
+        });
     }
 };
 

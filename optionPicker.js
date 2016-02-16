@@ -47,7 +47,7 @@ OptionPicker.prototype = {
         }
         if (this.counterChoicesMade == this.counterMax) {
             console.log('let the game begin');
-            $(board).fadeIn(1000, function(){
+            $(board).fadeIn(1000, function () {
                 board.buildGame();
             });
 
@@ -83,7 +83,7 @@ OptionPicker.prototype = {
         var selectedTheme = $(e.target).text();
         options.saveWinningOption(selectedTheme, 0);
         options.counterChoicesMade++;
-        $(e.target).parent().parent().fadeOut(1000, 'linear',function(){
+        $(e.target).parent().parent().fadeOut(1000, 'linear', function () {
             options.displayNextSet();
         });
     },
@@ -91,7 +91,7 @@ OptionPicker.prototype = {
         var selectedLevel = $(e.target).text();
         options.counterChoicesMade++;
         options.saveWinningOption(selectedLevel, 1);
-        $(e.target).parent().parent().fadeOut(1000, 'linear',function(){
+        $(e.target).parent().parent().fadeOut(1000, 'linear', function () {
             options.displayNextSet();
         });
         //increment options counter and call next option function
@@ -104,6 +104,11 @@ OptionPicker.prototype = {
                 break;
             }
         }
+    },
+    changeOptions: function (theme, level) {
+        this.saveWinningOption(theme, 0);
+        this.saveWinningOption(level, 1);
+        console.log(this.winningOptions);
     }
 
 };

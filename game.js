@@ -44,7 +44,6 @@ Game.prototype = {
             card.index = i;
             $('#container_game').append(card.getHTML());
 
-
         }
         this.assignClickHandlers();
 
@@ -183,6 +182,9 @@ Game.prototype = {
     },
     updateStats_matches: function () {
         board.stats.matches++;
+    },
+    updateStats_gamesPlayed: function(){
+        board.stats.games_played++;
     },
     reshuffle: function () {
         /*
