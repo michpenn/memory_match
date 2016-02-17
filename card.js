@@ -27,8 +27,6 @@ Card.prototype = {
 
     },
     clickHandler: function(){
-        console.log(this);
-        console.log(board.game);
         board.game.checkCard(this);
 
 },

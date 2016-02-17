@@ -15,6 +15,10 @@ Theme.prototype = {
         console.log('this is where to load things that happen before game');
         $('.options').remove();
         $('#container_stats').show();
+        this.determineDevice();
+    },
+    determineDevice: function(){
+console.log(navigator.userAgent);
         this.loadBackground();
     },
     loadBackground: function (){},

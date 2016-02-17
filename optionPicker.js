@@ -43,7 +43,6 @@ OptionPicker.prototype = {
                 console.log('this needs to be loaded: ' + this.optionSets[i].name);
                 $('.container_option_' + this.optionSets[i].name).css('display', 'block');
             }
-            console.log(this.counterChoicesMade, this.counterMax);
         }
         if (this.counterChoicesMade == this.counterMax) {
             console.log('let the game begin');
