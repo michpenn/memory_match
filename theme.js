@@ -111,8 +111,9 @@ safari.cardFrontImages = [
         front: 'themes/safari/zebra1.png'
     }
 ];
+safari.timerIntervalAnimations = [];
 safari.loadBackground = function(){
-    $('.container-full-game').addClass('background_safari');
+    $('body').addClass('background_safari');
 };
 
 var candidates2016 = new Theme('2016 Candidates');

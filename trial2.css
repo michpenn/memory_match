@@ -368,6 +368,7 @@ Media Queries
         font-size: 2em;
     }
 
+
 }
 
 /*MEDIUM DEVICES*/
@@ -411,6 +412,14 @@ Media Queries
         position: relative;
         left: 20%;
         width: 80%;
+    }
+
+    .background_safari {
+        background: url('themes/safari/backgrounds/safari-app-wallpaper-2.jpg');
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center bottom;
+        background-color: black;
     }
 }
 
@@ -457,7 +466,15 @@ Media Queries
         left: 20%;
         width: 80%;
     }
+    .background_safari {
+        background: url('themes/safari/backgrounds/safari-app-wallpaper-2.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: right bottom;
+        background-color: black;
+    }
 }
+/*XL DEVICES*/
 @media (min-width: 1920px) {
     .container_options {
         margin: 10% auto auto auto;
@@ -500,5 +517,11 @@ Media Queries
         position: relative;
         left: 20%;
         width: 80%;
+    }
+    .background_safari {
+        background: url('themes/safari/backgrounds/safari-app-wallpaper-2.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
     }
 }
