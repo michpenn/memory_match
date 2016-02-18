@@ -141,7 +141,12 @@ Board.prototype = {
         $('.card').fadeOut(1000, 'swing', function () {
             $(this).remove();
         });
-    }
+    },
+    animations: function(){
+        if(this.stats.matches ===2){
+            this.game.theme.animation1();
+        }
+    },
 };
 
 

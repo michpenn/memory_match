@@ -67,7 +67,6 @@ Game.prototype = {
                 this.assignCard(card);
             }
             else {
-                console.log('cards filled');
                 return;
             }
         }
@@ -133,6 +132,7 @@ Game.prototype = {
         }
         this.updateStats_attempts();
         board.displayCurrentStats();
+        board.animations();
 
     },
     matchFound: function (card1, card2) {

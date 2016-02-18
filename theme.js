@@ -22,6 +22,8 @@ console.log(navigator.userAgent);
         this.loadBackground();
     },
     loadBackground: function (){},
+    createAnimation1: function(){},
+    animation1: function(){},
     onGameEnd: function () {
         console.log('this is where to load things that happen at the end of the game');
     }
@@ -114,6 +116,22 @@ safari.cardFrontImages = [
 safari.timerIntervalAnimations = [];
 safari.loadBackground = function(){
     $('body').addClass('background_safari');
+};
+safari.createAnimation1= function(){
+    var car = $('<div>',{
+        class: 'safari_car'
+    });
+    $('.container-full-game').append(car);
+
+};
+
+safari.animation1 = function(){
+this.createAnimation1();
+    var car = $('.safari_car');
+    $(car).show().animate({left: '-=140%'}, 8000);
+    $(car).fadeOut(10000);
+
+
 };
 
 var candidates2016 = new Theme('2016 Candidates');

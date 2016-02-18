@@ -421,6 +421,17 @@ Media Queries
         background-position: center bottom;
         background-color: black;
     }
+    .safari_car{
+        background-image: url('themes/safari/backgrounds/animations/boy_jeep.png');
+        background-repeat: no-repeat;
+        background-size: 75% auto;
+        position: relative;
+        top: -10%;
+        left: 100%;
+        height: 500px;
+        width: 500px;
+        display: none;
+    }
 }
 
 /*LARGE DESKTOPS*/
@@ -473,6 +484,17 @@ Media Queries
         background-position: right bottom;
         background-color: black;
     }
+    .safari_car{
+        background-image: url('themes/safari/backgrounds/animations/boy_jeep.png');
+        background-repeat: no-repeat;
+        background-size: 75% auto;
+        position: relative;
+        top: -10%;
+        left: 100%;
+        height: 500px;
+        width: 500px;
+        display: none;
+    }
 }
 /*XL DEVICES*/
 @media (min-width: 1920px) {
@@ -523,5 +545,17 @@ Media Queries
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: center center;
+    }
+
+    .safari_car{
+        background-image: url('themes/safari/backgrounds/animations/boy_jeep.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        top: -20%;
+        left: 100%;
+        height: 500px;
+        width: 500px;
+        display: none;
     }
 }
