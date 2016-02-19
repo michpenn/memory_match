@@ -558,4 +558,49 @@ Media Queries
         width: 500px;
         display: none;
     }
+
+    .animate_tink_1 {
+        background-image: url('themes/disney/backgrounds/animations/tinkerbell_animate2.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        height: 500px;
+        width: 500px;
+        -webkit-animation: tinkerbell 7s 1;
+        animation: tinkerbell 7s 1;
+    }
+
+    @-webkit-keyframes tinkerbell {
+        0%   {top: -10%; left: -15%;}
+        10% {}
+        15% {}
+        20% {}
+        25%  {top: -20%; left: 20%}
+        30% {}
+        35% {}
+        40% {}
+        50%  {top: -40%; left: 40%}
+        55% {}
+        60% {}
+        65% {}
+        70% {}
+        75%  {top: -60%; left: 60%}
+        80% {}
+        85% {}
+        90% {}
+        95% {top: -80%; left: 80%}
+        100% {top: -100%; left: 100%}
+    }
+
+    @keyframes tinkerbell {
+        0%   {top: -10%; left: 15%;}
+        25%  {top: -20%; left: 20%}
+        50%  {top: -40%; left: 40%}
+        75%  {top: -60%; left: 60%}
+        95% {top: -80%; left: 80%}
+        100% {top: -100%; left: 100%}
+    }
+
+
+
 }

@@ -72,6 +72,17 @@ disneyPrincesses.cardFrontImages = [
 disneyPrincesses.loadBackground = function(){
     $('.container-full-game').addClass('background_princess');
 };
+disneyPrincesses.createAnimation1= function(){
+    var tink = $('<div>',{
+        class: 'animate_tink_1'
+    });
+    $('.container-full-game').append(tink);
+};
+disneyPrincesses.animation1= function(){
+    this.createAnimation1();
+    var tink = $('.animate_tink_1');
+    $(tink).show().addClass('tinkerbell_animation');
+};
 
 var safari = new Theme('Safari');
 safari.cardBackImage = 'themes/safari/cardback.png';
