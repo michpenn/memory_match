@@ -24,6 +24,7 @@ console.log(navigator.userAgent);
     loadBackground: function (){},
     createAnimation1: function(){},
     animation1: function(){},
+    win: function(){},
     onGameEnd: function () {
         console.log('this is where to load things that happen at the end of the game');
     }
@@ -70,7 +71,7 @@ disneyPrincesses.cardFrontImages = [
     }
 ];
 disneyPrincesses.loadBackground = function(){
-    $('.container-full-game').addClass('background_princess');
+    $('body').addClass('background_princess');
 };
 disneyPrincesses.createAnimation1= function(){
     var tink = $('<div>',{
@@ -81,7 +82,8 @@ disneyPrincesses.createAnimation1= function(){
 disneyPrincesses.animation1= function(){
     this.createAnimation1();
     var tink = $('.animate_tink_1');
-    $(tink).show().addClass('tinkerbell_animation');
+    $(tink).show();
+    tink.animate({left: '+=100%', top: '-=100%'}, {duration: 5000, complete: function(){$(tink).remove()}});
 };
 
 var safari = new Theme('Safari');
@@ -132,16 +134,14 @@ safari.createAnimation1= function(){
     var car = $('<div>',{
         class: 'safari_car'
     });
-    $('.container-full-game').append(car);
+    $('body').append(car);
 
 };
 
 safari.animation1 = function(){
 this.createAnimation1();
     var car = $('.safari_car');
-    $(car).show().animate({left: '-=140%'}, 8000);
-    $(car).fadeOut(10000);
-
+    $(car).show().animate({left: '-=140%'}, {duration: 8000, complete: function(){$(car).remove()}});
 
 };
 
@@ -186,5 +186,5 @@ candidates2016.cardFrontImages = [
             }
         ];
 candidates2016.loadBackground = function(){
-    $('.container-full-game').addClass('background_2016');
+    $('body').addClass('background_2016');
 };

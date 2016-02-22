@@ -143,8 +143,10 @@ Board.prototype = {
         });
     },
     animations: function(){
-        if(this.stats.matches ===2){
-            this.game.theme.animation1();
+        if(this.stats.matches === 2){
+                this.game.theme.animation1();
+
+
         }
     },
 };

@@ -132,7 +132,6 @@ Game.prototype = {
         }
         this.updateStats_attempts();
         board.displayCurrentStats();
-        board.animations();
 
     },
     matchFound: function (card1, card2) {
@@ -144,6 +143,7 @@ Game.prototype = {
         }, 2000);
         this.updateStats_matches();
         board.checkForWin();
+        board.animations();
     },
     matchFound_3: function (card1, card2, card3) {
         console.log('match of 3 found!');
@@ -156,10 +156,11 @@ Game.prototype = {
             board.game.card3 = null;
         }, 3000);
         this.updateStats_matches();
-        //if (board.stats.matches === 5 && this.level.name == 'hard') {
-        //    //this.reshuffle(this.reshuffle_order());
-        //}
+        if (board.stats.matches === 1 && this.level.name == 'hard') {
+            this.reshuffle(this.reshuffle_order());
+        }
         board.checkForWin();
+        board.animations();
     },
     matchNotFound: function (card1, card2) {
         setTimeout(function () {
@@ -208,27 +209,45 @@ Game.prototype = {
         $(cardsToReshuffle).each(function(){
             var randomIndex = Math.floor(Math.random()* (cardsToReshuffle.length));
             var thisCard = cardsToReshuffle[randomIndex];
+            //console.log($(thisCard));
+            //$(thisCard).css('position', 'absolute');
             cardsRandomized.push(thisCard);
             cardsToReshuffle.splice(randomIndex,1);
         });
 
-        console.log(cardsRandomized);
+        //console.log(cardsRandomized);
         return cardsRandomized;
     },
     reshuffle: function(array){
-        for(var i=0; i<array.length;) {
+        for(var i=0; i<array.length; i+=3) {
             var temp = array[i];
             var card1 = array[i];
             var card2 = array[i+1];
             var card3 = array[i+2];
-            console.log($(temp)[i].offsetLeft);
-            console.log($(temp)[i].offsetTop);
-            console.log($(temp)[i].offsetWidth);
+            var card1_offsetLeft = $(card1)[0].offsetLeft;
+            var card1_offsetTop = $(card1)[0].offsetTop;
+            var card2_offsetLeft = $(card2)[0].offsetLeft;
+            var card2_offsetTop = $(card2)[0].offsetTop;
+            var card3_offsetLeft = $(card3)[0].offsetLeft;
+            var card3_offsetTop  = $(card3)[0].offsetTop;
+
+            $(card1).animate({left: '+=' + (card2_offsetLeft - card1_offsetLeft),
+            top: '+=' + (card2_offsetTop - card1_offsetTop)}, 3000);
+            $(card2).animate({left: '+=' + (card3_offsetLeft - card2_offsetLeft),
+                top: '+=' + (card3_offsetTop -card2_offsetTop)}, 3000);
+            $(card3).animate({left: '+=' + (card1_offsetLeft -card3_offsetLeft),
+                top: '+=' + (card1_offsetTop - card3_offsetTop)}, 3000);
+            //console.log(card1, card2, card3);
+            //console.log($(card1)[0].offsetLeft);
+            //console.log($(card2)[0].offsetLeft);
+            //console.log($(card3)[0].offsetLeft);
+            //console.log($(temp)[i].offsetLeft);
+            //console.log($(temp)[i].offsetTop);
+            //console.log($(temp)[i].offsetWidth);
 
             //console.log('card 1: ',array[i]);
             //console.log('card 2: ',array[i+1]);
             //console.log('card 3: ',array[i+2]);
-            i += 3;
         }
 
     }
