@@ -146,7 +146,6 @@ Game.prototype = {
         board.animations();
     },
     matchFound_3: function (card1, card2, card3) {
-        console.log('match of 3 found!');
         setTimeout(function () {
             card1.matched();
             card2.matched();
@@ -154,9 +153,9 @@ Game.prototype = {
             board.game.card1 = null;
             board.game.card2 = null;
             board.game.card3 = null;
-        }, 3000);
+        }, 2000);
         this.updateStats_matches();
-        if (board.stats.matches === 1 && this.level.name == 'hard') {
+        if (board.stats.matches === 5 && this.level.name == 'hard') {
             this.reshuffle(this.reshuffle_order());
         }
         board.checkForWin();
@@ -195,10 +194,6 @@ Game.prototype = {
             var thisCard = $('.card')[i];
             if (!($(thisCard).hasClass('flipped'))) {
                 cardsToReshuffle.push(thisCard);
-                //console.log('Offset Height: ', $(thisCard)[0].offsetHeight);
-                //console.log('Offset Left: ', $(thisCard)[0].offsetLeft);
-                //console.log('Offset Top: ', $(thisCard)[0].offsetTop);
-                //console.log('Offset Width: ', $(thisCard)[0].offsetWidth);
             }
         }
         return cardsToReshuffle;
@@ -209,18 +204,14 @@ Game.prototype = {
         $(cardsToReshuffle).each(function(){
             var randomIndex = Math.floor(Math.random()* (cardsToReshuffle.length));
             var thisCard = cardsToReshuffle[randomIndex];
-            //console.log($(thisCard));
-            //$(thisCard).css('position', 'absolute');
             cardsRandomized.push(thisCard);
             cardsToReshuffle.splice(randomIndex,1);
         });
 
-        //console.log(cardsRandomized);
         return cardsRandomized;
     },
     reshuffle: function(array){
         for(var i=0; i<array.length; i+=3) {
-            var temp = array[i];
             var card1 = array[i];
             var card2 = array[i+1];
             var card3 = array[i+2];
@@ -232,22 +223,11 @@ Game.prototype = {
             var card3_offsetTop  = $(card3)[0].offsetTop;
 
             $(card1).animate({left: '+=' + (card2_offsetLeft - card1_offsetLeft),
-            top: '+=' + (card2_offsetTop - card1_offsetTop)}, 3000);
+            top: '+=' + (card2_offsetTop - card1_offsetTop)}, 2000);
             $(card2).animate({left: '+=' + (card3_offsetLeft - card2_offsetLeft),
-                top: '+=' + (card3_offsetTop -card2_offsetTop)}, 3000);
+                top: '+=' + (card3_offsetTop -card2_offsetTop)}, 2000);
             $(card3).animate({left: '+=' + (card1_offsetLeft -card3_offsetLeft),
-                top: '+=' + (card1_offsetTop - card3_offsetTop)}, 3000);
-            //console.log(card1, card2, card3);
-            //console.log($(card1)[0].offsetLeft);
-            //console.log($(card2)[0].offsetLeft);
-            //console.log($(card3)[0].offsetLeft);
-            //console.log($(temp)[i].offsetLeft);
-            //console.log($(temp)[i].offsetTop);
-            //console.log($(temp)[i].offsetWidth);
-
-            //console.log('card 1: ',array[i]);
-            //console.log('card 2: ',array[i+1]);
-            //console.log('card 3: ',array[i+2]);
+                top: '+=' + (card1_offsetTop - card3_offsetTop)}, 2000);
         }
 
     }

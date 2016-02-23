@@ -48,9 +48,9 @@ Board.prototype = {
     },
     checkForWin: function () {
         if (this.stats.matches == this.stats.number_matches) {
-            console.log('you win!');
             this.game.updateStats_gamesPlayed();
             this.displayCurrentStats();
+            this.game.theme.onGameEnd();
         }
     },
     resetHandler: function () {
@@ -132,6 +132,7 @@ Board.prototype = {
             this.buildGame();
             this.game.updateStats_gamesPlayed();
             this.displayCurrentStats();
+            $('#blanket').hide();
         }.bind(this), 1200);
 
 

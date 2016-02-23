@@ -24,9 +24,13 @@ console.log(navigator.userAgent);
     loadBackground: function (){},
     createAnimation1: function(){},
     animation1: function(){},
-    win: function(){},
+    win: function(){
+    },
     onGameEnd: function () {
         console.log('this is where to load things that happen at the end of the game');
+        this.win();
+        console.log('play again?');
+
     }
 };
 
@@ -85,6 +89,9 @@ disneyPrincesses.animation1= function(){
     $(tink).show();
     tink.animate({left: '+=100%', top: '-=100%'}, {duration: 5000, complete: function(){$(tink).remove()}});
 };
+disneyPrincesses.win = function(){
+    console.log('disney princess win here');
+};
 
 var safari = new Theme('Safari');
 safari.cardBackImage = 'themes/safari/cardback.png';
@@ -135,14 +142,16 @@ safari.createAnimation1= function(){
         class: 'safari_car'
     });
     $('body').append(car);
-
 };
 
 safari.animation1 = function(){
 this.createAnimation1();
     var car = $('.safari_car');
-    $(car).show().animate({left: '-=140%'}, {duration: 8000, complete: function(){$(car).remove()}});
-
+    $(car).show().animate({left: '-=140%'}, {duration: 9000, complete: function(){$(car).remove()}});
+};
+safari.win = function(){
+    //append decorations to the div and display the div
+    console.log('safari win here');
 };
 
 var candidates2016 = new Theme('2016 Candidates');
@@ -187,4 +196,8 @@ candidates2016.cardFrontImages = [
         ];
 candidates2016.loadBackground = function(){
     $('body').addClass('background_2016');
+};
+
+candidates2016.win = function(){
+    console.log('2016 win here');
 };
