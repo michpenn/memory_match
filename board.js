@@ -51,6 +51,9 @@ Board.prototype = {
             this.game.updateStats_gamesPlayed();
             this.displayCurrentStats();
             this.game.theme.onGameEnd();
+            $('.button_newGame').on('click', function(){
+                console.log('make a new game');
+            }.bind(this));
         }
     },
     resetHandler: function () {
@@ -71,13 +74,6 @@ Board.prototype = {
             $(overlay).hide();
             $(options_div).hide();
         }
-
-        /*
-         * Give option to change theme and level
-         * clear board
-         * make new game
-         * increase number of games played
-         * */
     },
     display_reset_options: function () {
         for (var i = 0; i < this.optionPicker.optionSets.length; i++) {
@@ -146,8 +142,6 @@ Board.prototype = {
     animations: function(){
         if(this.stats.matches === 2){
                 this.game.theme.animation1();
-
-
         }
     },
 };

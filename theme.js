@@ -29,6 +29,10 @@ console.log(navigator.userAgent);
     onGameEnd: function () {
         console.log('this is where to load things that happen at the end of the game');
         this.win();
+        $('.closeLink').on('click', function(){
+            $('#popUpWin').hide();
+        });
+        $('#popUpWin').show();
         console.log('play again?');
 
     }
@@ -196,6 +200,12 @@ candidates2016.cardFrontImages = [
         ];
 candidates2016.loadBackground = function(){
     $('body').addClass('background_2016');
+};
+
+candidates2016.animation1 = function(){
+    var flipped_cards = $('.flipped');
+    var animate_this = flipped_cards[flipped_cards.length-1];
+    console.log(flipped_cards, animate_this);
 };
 
 candidates2016.win = function(){
