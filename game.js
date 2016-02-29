@@ -215,6 +215,7 @@ Game.prototype = {
             var card1 = array[i];
             var card2 = array[i+1];
             var card3 = array[i+2];
+            console.log(array[i]);
             var card1_offsetLeft = $(card1)[0].offsetLeft;
             var card1_offsetTop = $(card1)[0].offsetTop;
             var card2_offsetLeft = $(card2)[0].offsetLeft;
