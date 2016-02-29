@@ -2,120 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lobster|Cardo:400,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <title>Memory Match</title>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
-
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="card.js"></script>
+    <script src="theme.js"></script>
+    <script src="level.js"></script>
+    <script src="optionPicker.js"></script>
+    <script src="game.js"></script>
+    <script src="board.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-<header>
-<h1 class="game-title">How Well Do You Know Your Candidates?</h1>
-    <ul class="nav-bar">
-        <li><a href="#">Settings</a></li>
-        <li><a href="about.html">About</a></li>
-    </ul>
-</header>
-<div id="body-container">
-<div id="stats_container">
-    <div class="games-played">
-        <h4 class="label">Games Played:</h4>
-        <p class="value"></p>
-    </div>
-    <div class="attempts">
-        <h4 class="label">Attempts:</h4>
-        <p class="value"></p>
-    </div>
-    <div class="accuracy">
-        <h4 class="label">Accuracy:</h4>
-        <p class="value"></p>
-    </div>
-    <button class="reset">Reset Game</button>
+
+<div class="options capitalize">
 </div>
-<div id="game-area">
-<div class="row">
-    <!--plan: make the quote cards have the first few words of the quote. When you click on
-    the quote, a modal pops up with the full quote. When the cards are matched, a youtube clip
-    with the quote appears -->
-        <div class="trump card">
-            <div class="front"><img src="images/trump.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="trump card">
-            <div class="front"><img src="images/trump.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="rubio card">
-            <div class="front"><img src="images/rubio.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="rubio card">
-            <div class="front"><img src="images/rubio.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="clinton card">
-            <div class="front"><img src="images/clinton.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="clinton card">
-            <div class="front"><img src="images/clinton.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
+<div class="container-fluid container-full-game">
+    <div id="container_stats">
+        <ul id="ul_stats">
+            <li class="li_stats">Games Played: <span id="span_games_played"></span></li>
+            <li class="li_stats">Attempts: <span id="span_attempts"></span></li>
+            <li class="li_stats">Accuracy: <span id="span_accuracy"></span></li>
+            <li class="li_stats">Matches: <span id="span_matches"></span></li>
+            <li class="li_stats">
+                <button class="button_reset" id="link">Reset</button>
+            </li>
+        </ul>
     </div>
-    <div class="row">
-        <div class="bush card">
-            <div class="front"><img src="images/bush.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="bush card">
-            <div class="front"><img src="images/bush.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="sanders card">
-            <div class="front"><img src="images/sanders.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="sanders card">
-            <div class="front"><img src="images/sanders.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="card">
-            <div class="front"><img src="images/carson.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="carson card">
-            <div class="front"><img src="images/carson.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="carson card">
-            <div class="front"><img src="images/fiorina.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="card">
-            <div class="front"><img src="images/fiorina.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="cruz card">
-            <div class="front"><img src="images/cruz.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="cruz card">
-            <div class="front"><img src="images/cruz.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="huckabee card">
-            <div class="front"><img src="images/huckabee.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-        <div class="huckabee card">
-            <div class="front"><img src="images/huckabee.jpg"></div>
-            <div class="back"><img src="images/2016.png"></div>
-        </div>
-    </div>
+    <div id="container_game"></div>
 </div>
+<div id="blanket" style="display:none;"></div>
+<div id="popUpDiv" style="display:none;">
+    <a href="#" id="closeLink">X</a>
+
+    <h3>
+        Would you like to change the theme and/or level?
+    </h3>
+    <form id="reset_form"></form>
+</div>
+<div id="popUpWin" style="display:none">
+    <a href="#" class="closeLink">X</a>
+    <h1>You Won!</h1><br>
+    <h3>Would you like to play again?</h3>
+    <div class="row_buttons_win">
+        <button class="button_win">Yes</button>
+        <button class="button_win button_newGame">Change Settings</button>
+    </div>
 
 </div>
 </body>
