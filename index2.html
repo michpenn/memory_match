@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Memory Match</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    <!--My JS -->
+    <script src="memory_match.js"></script>
+    <!--General Game Styling -->
+    <link rel="stylesheet" href="memory_style.css" type="text/css">
+    <!-- Google Font Sheet -->
+    <link href='https://fonts.googleapis.com/css?family=Cinzel|Tangerine' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<!-- THIS DOCUMENT IS FOR TRYING DIFFERENT ANIMATIONS-->
+<div class="container-fluid" id="container_preferences">
+    <div class="row">
+        <h1 class="welcome col-xs-12 text-center">Welcome to Memory Match!</h1>
+    </div>
+    <div id="container_theme" class="enterPreferences container_setPreferences">
+        <h2 class="col-xs-12 text-center header_preference">Please Select a Theme</h2>
+
+        <div class="row text-center">
+            <button type="button" class="btn btn-primary gradient btn_preferences btn_theme" id="theme_disney">Disney
+            </button>
+            <button type="button" class="btn btn-primary gradient btn_preferences btn_theme" id="theme_safari">Safari
+            </button>
+            <button type="button" class="btn btn-primary gradient btn_preferences btn_theme" id="theme_2016">2016
+            </button>
+        </div>
+    </div>
+    <div id="container_level" class="hide container_setPreferences">
+        <h2 class="col-xs-12 text-center header_preference">Please Select a Level</h2>
+
+        <div class="row text-center">
+            <button type="button" class="btn btn-primary gradient btn_preferences btn_level" id="level_easy">Easy
+            </button>
+            <button type="button" class="btn btn-primary gradient btn_preferences btn_level" id="level_medium">Medium
+            </button>
+            <button type="button" class="btn btn-primary gradient btn_preferences btn_level" id="level_hard">Hard
+            </button>
+        </div>
+    </div>
+    <div id="container_confirm_preferences" class="hide container_setPreferences">
+        <h2 class="col-xs-12 text-center header_preference">Please Confirm Your Selections</h2>
+
+        <div class="row text-center">
+            <div class="col-xs-12 text-center capitalize" id="confirm_theme"></div>
+        </div>
+        <div class="row text-center">
+            <div class="col-xs-12 text-center capitalize" id="confirm_level"></div>
+        </div>
+        <div class="row text-center">
+            <button type="button" class="btn btn-primary gradient" id="btn_changePreferences" data-toggle="modal"
+                    data-target="#myModal_preferences">Change
+            </button>
+            <button type="button" class="btn btn-primary gradient" id="btn_confirmPreferences">Confirm
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal_preferences" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Change Preferences</h4>
+            </div>
+            <div class="modal-body">
+                You currently have <span id="span_theme" class="capitalize bold"></span> set as your theme and
+                <span id="span_level" class="capitalize bold"></span> set as your level. <br>
+                Here are your options: <br>
+                <h4 class="text-center">Themes:</h4>
+
+                <div class="row text-center">
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions_theme" id="radio_disney" value="disney"> Disney
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions_theme" id="radio_safari" value="safari"> Safari
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions_theme" id="radio_2016" value="2016"> 2016
+                    </label>
+
+                </div>
+                <h4 class="text-center">Levels:</h4>
+
+                <div class="row text-center row_levels">
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions_level" id="radio_easy" value="easy"> Easy
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions_level" id="radio_medium" value="medium"> Medium
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions_level" id="radio_hard" value="hard"> Hard
+                    </label>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btn_confirmChanges">Confirm Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
