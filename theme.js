@@ -15,12 +15,14 @@ Theme.prototype = {
         console.log('this is where to load things that happen before game');
         $('.options').remove();
         $('#container_stats').show();
+        this.format_stats();
         this.determineDevice();
     },
     determineDevice: function(){
 console.log(navigator.userAgent);
         this.loadBackground();
     },
+    format_stats: function(){},
     loadBackground: function (){},
     createAnimation1: function(){},
     animation1: function(){},
@@ -80,6 +82,10 @@ disneyPrincesses.cardFrontImages = [
 ];
 disneyPrincesses.loadBackground = function(){
     $('body').addClass('background_princess');
+};
+disneyPrincesses.format_stats = function(){
+    $('.button_reset').addClass('button_reset_disney');
+    $('#ul_stats').addClass('ul_stats_disney')
 };
 disneyPrincesses.createAnimation1= function(){
     var tink = $('<div>',{
@@ -141,6 +147,9 @@ safari.timerIntervalAnimations = [];
 safari.loadBackground = function(){
     $('body').addClass('background_safari');
 };
+safari.format_stats = function(){
+    $('.button_reset').addClass('button_reset_safari');
+};
 safari.createAnimation1= function(){
     var car = $('<div>',{
         class: 'safari_car'
@@ -201,7 +210,9 @@ candidates2016.cardFrontImages = [
 candidates2016.loadBackground = function(){
     $('body').addClass('background_2016');
 };
-
+candidates2016.format_stats = function(){
+    $('.button_reset').addClass('button_reset_2016');
+};
 candidates2016.animation1 = function(){
     var flipped_cards = $('.flipped');
     var animate_this = flipped_cards[flipped_cards.length-1];
