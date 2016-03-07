@@ -238,7 +238,35 @@ Button Formatting
 }
 
 .button_reset_safari {
+    -moz-box-shadow:inset 0px 1px 0px 0px #f4fadc;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #f4fadc;
+    box-shadow:inset 0px 1px 0px 0px #f4fadc;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fafabe), color-stop(1, #ffd900) );
+    background:-moz-linear-gradient( center top, #fafabe 5%, #ffd900 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafabe', endColorstr='#ffd900');
+    background-color:#fafabe;
+    text-indent:0;
+    border:1px solid #f2e085;
+    display:inline-block;
+    color:#3b3a36;
+    font-family: 'Alegreya', serif;
+    font-weight: 400;
+    max-height: 60px;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:0px 1px 0px #becc54;
 }
+
+.button_reset_safari:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffd900), color-stop(1, #fafabe) );
+    background:-moz-linear-gradient( center top, #ffd900 5%, #fafabe 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd900', endColorstr='#fafabe');
+    background-color:#ffd900;
+}
+.button_reset_safari:active {
+     position:relative;
+     top:1px;
+ }
 
 .button_reset_2016 {
 }
