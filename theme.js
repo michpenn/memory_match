@@ -211,6 +211,8 @@ candidates2016.loadBackground = function(){
     $('body').addClass('background_2016');
 };
 candidates2016.format_stats = function(){
+    //$('#ul_stats').addClass('ul_stats_2016');
+    $('#ul_stats').css('background-color', '#959497');
     $('.button_reset').addClass('button_reset_2016');
 };
 candidates2016.animation1 = function(){

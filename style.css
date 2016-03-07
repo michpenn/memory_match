@@ -269,7 +269,35 @@ Button Formatting
  }
 
 .button_reset_2016 {
+    -moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+    box-shadow:inset 0px 1px 0px 0px #97c4fe;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0) );
+    background:-moz-linear-gradient( center top, #3d94f6 5%, #1e62d0 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0');
+    background-color:#3d94f6;
+    text-indent:0;
+    border:1px solid #337fed;
+    display:inline-block;
+    color:#ffffff;
+    font-family: 'Alegreya', serif;
+    font-weight: 400;
+    max-height: 60px;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:0px 1px 0px #1570cd;
+
 }
+
+.button_reset_2016:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6) );
+    background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
+    background-color:#1e62d0;
+}.button_reset_2016:active {
+     position:relative;
+     top:1px;
+ }
 
 .row_buttons_win {
     padding-left: auto;
@@ -545,7 +573,6 @@ Media Queries
     }
 
     #ul_stats {
-        background-color: #f1f1f1;
         width: 15%;
         position: fixed;
         height: auto;
@@ -594,6 +621,13 @@ Media Queries
         height: 500px;
         width: 500px;
         display: none;
+    }
+
+    .background_2016 {
+        background: url('themes/candidates/backgrounds/podium_background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center bottom;
     }
 }
 
@@ -673,6 +707,13 @@ Media Queries
         background-size: 100% 100%;
         background-position: right bottom;
         background-color: black;
+    }
+
+    .background_2016 {
+        background: url('themes/candidates/backgrounds/podium_background.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center bottom;
     }
 
     .safari_car {
@@ -763,6 +804,13 @@ Media Queries
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: center center;
+    }
+
+    .background_2016 {
+        background: url('themes/candidates/backgrounds/podium_background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center bottom;
     }
 
     .safari_car {
