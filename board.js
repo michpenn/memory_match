@@ -138,6 +138,7 @@ Board.prototype = {
         $('.card').fadeOut(1000, 'swing', function () {
             $(this).remove();
         });
+        $('body').removeClass();
     },
     animations: function(){
         if(this.stats.matches === 2){
